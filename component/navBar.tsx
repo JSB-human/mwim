@@ -1,8 +1,21 @@
-import { useSession } from "next-auth/react";
+import { getToken } from "next-auth/jwt";
+import { signOut, useSession } from "next-auth/react";
+import Image from "next/image";
+import Link from "next/link";
+import { useEffect } from "react";
 import {FaUser, FaBars} from "react-icons/fa";
+import login_api from "../pages/api/login_api";
+import {IoPersonCircle, IoLogInOutline} from "react-icons/io5";
+
 const NavBar = () => {
-    const { data : session } = useSession();
-    console.log(session);
+
+    useEffect(() => {
+        
+        // console.log(login_api);
+    })
+
+    const { data : token, status } = useSession();
+    console.log('token',token);
     return(
         <div className="grid grid-cols-3 bg-indigo-900 text-white "> 
                 <div className="grid grid-cols-2">
@@ -14,14 +27,26 @@ const NavBar = () => {
                         친구 세상
                     </div> */}
                 </div>
-                <div className='font-blackhansans text-sm text-center'>
-                    <p className='text-blue-400'>내가</p>
-                    <p className='text-purple-500'>만든</p>
-                    <p className='text-red-400'>세상</p>
+                <div className='font-blackhansans text-sm text-center relative h-[55px]'>
+                    <Link href="/main">
+                        <a>
+                            <Image src={"/main_logo.png"} layout="fill" objectFit="contain"/>
+                        </a>
+                    </Link>
                 </div>
                 <div className="place-self-center">
                     {/* <FaUser size={25}/> */}
-                    {session ? <div>로그아웃</div> : <div>로그인</div>}
+                    {token ? <div className="hover:cursor-pointer font-bold">
+                                <Link href={"/mypage/1"}>
+                                    <IoPersonCircle size={40}/>
+                                </Link>
+                            </div> 
+                            : 
+                            <div className="hover:cursor-pointer">
+                                <Link href={"/login"}>
+                                    <IoLogInOutline size={30}/>
+                                </Link>
+                            </div>}
                 </div>
 
         </div>

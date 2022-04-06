@@ -14,8 +14,6 @@ const Home: NextPage = () => {
 
       <main >
          인덱스
-       
-        
         
       </main>
 

@@ -1,21 +1,23 @@
 import Link from "next/link";
-import { signIn, signOut, useSession } from "next-auth/react";
 import { AppProps } from "next/app";
 import Image from "next/image";
+import axios from "axios";
+import { signIn } from "next-auth/react";
+import { FaFacebook } from "react-icons/fa";
 
 const Login = ({ Component, pageProps }: AppProps) => {
-    
 
     return(
-        <div className="bg-indigo-900 h-screen w-screen">
+        <div className="bg-indigo-900 h-full w-full">
             <div className="text-4xl text-center">
                 <div className='grid grid-cols-1 font-blackhansans justify-items-center'>
-                    <div className=''>
-                        <p className='text-blue-400'>내가</p>
+                    <div className='relative h-[120px] w-52'>
+                        {/* <p className='text-blue-400'>내가</p>
                         <p className='text-purple-500'>만든</p>
-                        <p className='text-red-400'>세상</p>
+                        <p className='text-red-400'>세상</p> */}
+                        <Image src={"/main_logo.png"} layout="fill" objectFit="contain"/>
                     </div>
-                    <form className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 max-w-xl font-sans mt-6">
+                    <form className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 max-w-xl font-sans mt-6 min-w-min">
                         <div className="mb-4">
                         <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="username">
                             이메일 주소
@@ -43,20 +45,22 @@ const Login = ({ Component, pageProps }: AppProps) => {
                         <br></br>
                         <hr/>
                         <br></br>
-                        <div className="" onClick={() => signIn('kakao', {callbackUrl : 'http://localhost:3000/main'})}>
-                         <Image src={"/kakao_login_medium_wide.png"} width={100} height={80}/>
+                        <div className="hover:cursor-pointer relative h-[45px]" onClick={()=>signIn('kakao')} >
+                            <Image src={"/kakao_login_large_wide.png"} layout="fill" objectFit="contain"/>
                         </div>
-                        <div onClick={()=> signOut()}>
-                            로그아웃
+
+                        <div className="ml-16 mr-16 mt-1 h-[45px] bg-[#1778F2] text-white font-bold rounded hover:cursor-pointer" onClick={()=>signIn('facebook')}>
+                            <FaFacebook color="white" className="inline text-[20px]"></FaFacebook>
+                            <span className="text-[15px] ml-3 ">Facebook으로 로그인</span>
                         </div>
                         
                     </form>
+                  
                    
-
                     <p className="text-center text-gray-500 text-xs">
                         &copy;2022 MWIM. All rights reserved.
                     </p>
-
+         
                 </div>
             </div>
         </div>
