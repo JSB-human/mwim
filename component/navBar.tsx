@@ -4,7 +4,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect } from "react";
 import {FaUser, FaBars} from "react-icons/fa";
-import login_api from "../pages/api/login_api";
 import {IoPersonCircle, IoLogInOutline} from "react-icons/io5";
 
 const NavBar = () => {
@@ -15,9 +14,9 @@ const NavBar = () => {
     })
 
     const { data : token, status } = useSession();
-    console.log('token',token);
+    // console.log('token',token);
     return(
-        <div className="grid grid-cols-3 bg-indigo-900 text-white "> 
+        <div className="grid grid-cols-3 bg-indigo-800 text-white h-full"> 
                 <div className="grid grid-cols-2">
                     {/* <FaBars size={25}/> */}
                     {/* <div className="place-self-center">
@@ -38,13 +37,17 @@ const NavBar = () => {
                     {/* <FaUser size={25}/> */}
                     {token ? <div className="hover:cursor-pointer font-bold">
                                 <Link href={"/mypage/1"}>
-                                    <IoPersonCircle size={40}/>
+                                    <a className="text-white">
+                                     <IoPersonCircle size={40}/>
+                                    </a>
                                 </Link>
                             </div> 
                             : 
                             <div className="hover:cursor-pointer">
                                 <Link href={"/login"}>
-                                    <IoLogInOutline size={30}/>
+                                    <a className="text-white">
+                                        <IoLogInOutline size={30}/>
+                                    </a>
                                 </Link>
                             </div>}
                 </div>

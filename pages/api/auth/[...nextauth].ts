@@ -26,7 +26,7 @@ export default NextAuth({
                 return '/login';
             } 
             else if(url.startsWith("/")){
-                return '/api/afterLogin';
+                return '/loading/loadLogin';
             }
             return baseUrl;
         }

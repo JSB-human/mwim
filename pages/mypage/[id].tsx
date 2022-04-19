@@ -1,5 +1,6 @@
 import { signOut } from "next-auth/react";
 import { useRouter } from "next/router";
+import Footer from "../../component/footer";
 import NavBar from "../../component/navBar";
 
 
@@ -10,18 +11,19 @@ const MyPage = () => {
     return(
         <>
             <NavBar></NavBar>
-            <div className="h-screen bg-slate-200">
-                <div className="grid grid-cols-1 place-items-center">
-                    <div className="w-11/12 lg:w-1/2 md:w-4/6 sm:w-11/12 text-center bg-white mt-5 rounded border-zinc-300 border">
+            <div className="text-center min-h-screen h-full w-full bg-slate-100">
+                <div className="container mx-auto px-4 grid grid-cols-1 gap-2">
+                    <div className="bg-white mt-2 rounded border-zinc-300 border">
                         <p>이름</p>
                         <button onClick={()=>signOut()}>로그아웃</button>
                     </div>
-                    <div className="w-11/12 lg:w-1/2 md:w-4/6 sm:w-11/12 text-center bg-white mt-5 rounded border-zinc-300 border">
+                    <div className="bg-white mt-2 rounded border-zinc-300 border">
                         내 세상을 만들어보세요
                     </div>
                 </div>
 
             </div>
+            <Footer></Footer>
         </>
     )
 
