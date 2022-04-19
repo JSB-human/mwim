@@ -19,7 +19,7 @@ const MakeBalance = () => {
                 alert("내용을 전부 작성해주세요.")
                 return;
             }
-
+            
             const sub = await axios.get('/api/login_api');
             axios.post('/spring/play/balance/add', {
                 maker : sub.data.sub,
