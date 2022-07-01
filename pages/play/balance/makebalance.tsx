@@ -9,7 +9,7 @@ import NavBar from "../../../component/navBar";
 const MakeBalance = () => {
     const router = useRouter();
 
-    const [title, setTitle] = useState('');
+    const [title, setTitle] = useState<string>('');
     const [left, setLeft] = useState('');
     const [right, setRight] = useState('');
 
@@ -48,12 +48,12 @@ const MakeBalance = () => {
                     
                 </div>
                 <div className="text-center">
-                    <input type="text" value={title} onChange={(e : React.FormEvent<HTMLInputElement>) => {setTitle(e.currentTarget.value)}} placeholder="ex)평생 먹어야한다면?" className="text-3xl text-center w-full h-24 rounded border-2 border-black"/>
+                    <input type="text" value={title} onChange={(e : React.FormEvent<HTMLInputElement>) => {setTitle(e.currentTarget.value)}} placeholder="ex)평생 먹어야한다면?" className="text-3xl text-center w-full h-24 rounded border border-black"/>
                 </div>
-                <div className="grid grid-cols-1 xl:grid-cols-3 text-center text-3xl">
-                    <input type="text" value={left} onChange={(e : React.FormEvent<HTMLInputElement>) => {setLeft(e.currentTarget.value)}} placeholder="짜장면" className="h-48 text-center border-2 border-black"/>
-                    <span className="justify-center">VS</span>
-                    <input type="text" value={right} onChange={(e : React.FormEvent<HTMLInputElement>) => {setRight(e.currentTarget.value)}} placeholder="짬뽕" className="h-48 text-center border-2 border-black"/>
+                <div className="grid grid-cols-1 xl:grid-cols-2 place-items-center text-3xl">
+                    <input type="text" value={left} onChange={(e : React.FormEvent<HTMLInputElement>) => {setLeft(e.currentTarget.value)}} placeholder="짜장면" className="h-60 w-full text-center border border-black"/>
+                    {/* <div className="">VS</div> */}
+                    <input type="text" value={right} onChange={(e : React.FormEvent<HTMLInputElement>) => {setRight(e.currentTarget.value)}} placeholder="짬뽕" className="h-60 w-full text-center border border-black"/>
                 </div>
                 <div className="text-center">
                     <Button onClick={()=> {AddBalance()}}>생성</Button>

@@ -5,5 +5,8 @@ namespace NodeJS{
 
         FACEBOOK_CLIENT_ID : string
         FACEBOOK_CLIENT_SECRET : string
+
+        NAVER_CLIENT_ID : string
+        NAVER_CLIENT_SECRET : string
     }
 }

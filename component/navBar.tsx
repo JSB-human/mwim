@@ -16,14 +16,14 @@ const NavBar = () => {
     const { data : token, status } = useSession();
     // console.log('token',token);
     return(
-        <div className="grid grid-cols-3 bg-indigo-800 text-white h-full"> 
+        <div className="grid grid-cols-3 bg-blue-800 border-b border-gray-300 p-1 text-white h-full"> 
                 <div className="grid grid-cols-2">
                     {/* <FaBars size={25}/> */}
                     {/* <div className="place-self-center">
                         내 세상
                     </div>
                     <div className="place-self-center">
-                        친구 세상
+                        친구 세상0
                     </div> */}
                 </div>
                 <div className='font-blackhansans text-sm text-center relative h-[55px]'>

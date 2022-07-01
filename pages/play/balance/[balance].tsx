@@ -81,10 +81,10 @@ const Balance = () => {
                         {title}
                     </div>
                     <div className="grid grid-cols-2  h-96 ">
-                        <div onClick={clickSel1} className={"w-full overflow-clip flex justify-center items-center bg-purple-500 border-r border-r-black text-2xl text-white hover:cursor-pointer"}>
+                        <div onClick={clickSel1} className={"w-full overflow-clip flex justify-center items-center bg-purple-500 border-r border-r-black text-2xl text-white hover:cursor-pointer p-2"}>
                             {left}
                         </div>
-                        <div onClick={clickSel2} className={"w-full overflow-clip flex justify-center items-center bg-red-400 border-l border-l-black text-2xl text-white hover:cursor-pointer"}>
+                        <div onClick={clickSel2} className={"w-full overflow-clip flex justify-center items-center bg-red-400 border-l border-l-black text-2xl text-white hover:cursor-pointer p-2"}>
                             {right}
                         </div>
                         

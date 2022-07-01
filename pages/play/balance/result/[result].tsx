@@ -13,7 +13,7 @@ import NavBar from "../../../../component/navBar";
 
 const Balance_Result = () => {
     const router = useRouter();
-    const balance_result = router.query.balance_result;
+    const balance_result = router.query.result;
 
 
 
@@ -26,11 +26,8 @@ const Balance_Result = () => {
     const [rightP, setrightP] = useState(0);
     
 
-
-
-    
-
     useEffect(() => {
+
         if(balance_result !== undefined){
             axios.get('/spring/play/balance/get/' + balance_result)
             .then((res) => {
@@ -60,12 +57,12 @@ const Balance_Result = () => {
                     {title}
                 </div>
                 <div className="h-72 grid grid-cols-2">
-                    <div className={"h-72 w-full overflow-clip flex justify-center items-center bg-purple-500 border-r border-r-black text-2xl text-white"}>
+                    <div className={"h-72 w-full overflow-clip flex justify-center items-center bg-purple-500 border-r border-r-black text-2xl text-white p-2"}>
                         {left}
                         <br></br>
                         ({leftP}%)
                     </div>
-                    <div className={"h-72 w-full overflow-clip flex justify-center items-center bg-red-400 border-r border-r-black text-2xl text-white"}>  
+                    <div className={"h-72 w-full overflow-clip flex justify-center items-center bg-red-400 border-r border-r-black text-2xl text-white p-2"}>  
                         {right}
                         <br></br>
                         ({rightP}%)

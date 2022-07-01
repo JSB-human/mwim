@@ -10,22 +10,25 @@ const GameReply = (props: { gameType: number; }) => {
     const {gameType} = props;
 
     const router = useRouter();
-    const balance_result = router.query.balance_result;
+    const result = router.query.result;
 
     const [reply, setReply] = useState([]);
     const [nickname, setNickname] = useState('');
     const [txt, setTxt] = useState(''); 
 
     useEffect(() => {
-        let params = {
-            game_no : balance_result,
-            game_type : gameType 
+        if(result != undefined){
+            let params = {
+                game_no : result,
+                game_type : gameType 
+            }
+            axios.get('/spring/game_reply/select', { params })
+            .then((res) => {
+                setReply(res.data);
+            })
         }
-        axios.get('/spring/game_reply/select', { params })
-        .then((res) => {
-            setReply(res.data);
-        })
-    })
+        
+    },[result])
 
     const AddReply = async () => {
         if(nickname.replace(/ /g,"")==="" || txt.replace(/ /g,"")===""){
@@ -36,14 +39,14 @@ const GameReply = (props: { gameType: number; }) => {
         const sub = await axios.get('/api/login_api');
         axios.post('/spring/game_reply/add', {
             game_type : gameType,
-            game_no : balance_result,
+            game_no : result,
             writer : sub.data.sub,
             nickname : nickname,
             content : txt
         })
         .then(() => {
             let params = {
-                game_no : balance_result,
+                game_no : result,
                 game_type : gameType 
             }
             axios.get('/spring/game_reply/select', { params })
