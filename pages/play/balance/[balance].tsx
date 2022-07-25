@@ -7,6 +7,10 @@ import {AiFillLike} from "react-icons/ai";
 import { useRouter } from "next/router";
 import Footer from "../../../component/footer";
 import axios from "axios";
+import Share from "../../../component/share"; 
+import Post from "../../../component/post";
+import Head from "next/head";
+import ShareBtns from "../../../component/shareBtns";
 
 const Balance = () => {
     const router = useRouter();
@@ -53,6 +57,9 @@ const Balance = () => {
         .then(() => {
             router.push('/play/balance/result/'+gameNo);
         })
+        .catch((err) => {
+            console.log(err);
+        })
     }
 
     const clickSel2 = () : void=> {
@@ -71,6 +78,13 @@ const Balance = () => {
 
     return(
         <>
+            {/* <Head>
+                <title>My page title</title>
+                <meta property="og:title" content="The Rock" />
+                <meta property="og:description" content="The Rock Description" />
+                <meta property="og:url" content="http://localhost:3000/play/balance/2" />
+                <meta property="og:image" content="https://ia.media-imdb.com/images/rock.jpg" />
+            </Head> */}
             <NavBar/>
             <div className="h-screen min-h-full bg-slate-100">
                 <div className="container mx-auto px-4">
@@ -89,18 +103,11 @@ const Balance = () => {
                         </div>
                         
                     </div>
-                    <div className="text-right">
-                        
-                        <ButtonGroup aria-label="btns">
-                            <Link href={"/play/balance/makebalance"}>
-                                <a>
-                                    <Button type="button" variant="success"><BsFillPencilFill className="inline-block pr-1"/><b>새 게임 만들기</b></Button>
-                                </a>
-                            </Link>
-                            <Button type="button" variant="warning"><BsShareFill className="inline-block pr-1"/><b>공유하기</b></Button>
-                            <Button type="button" variant="danger"><AiFillLike className="inline-block pr-1"/><b>내꺼하기</b></Button>
-                        </ButtonGroup>
-                    </div>
+                    <ShareBtns
+                        newgame ={true}
+                        url={"/play/balance/makebalance"} 
+                        btnTitle={"새 게임 만들기"} 
+                        title={`밸런스게임 - ${left} vs ${right}`}></ShareBtns>
 
                 </div>
             </div>

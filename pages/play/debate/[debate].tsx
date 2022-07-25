@@ -8,6 +8,9 @@ import { useRouter } from "next/router";
 import Footer from "../../../component/footer";
 import axios from "axios";
 import moment from "moment";
+import Share from "../../../component/share";
+import Post from "../../../component/post";
+import ShareBtns from "../../../component/shareBtns";
 
 const Debate = () => {
     const router = useRouter();
@@ -105,6 +108,11 @@ const Debate = () => {
                             {description}
                         </p>
                     </div>
+                    <ShareBtns
+                        newgame ={true}
+                        url={"/play/vote/makevote"} 
+                        btnTitle={"새 토론 만들기"} 
+                        title={`토론 - ${title}`}></ShareBtns>
                     <div className="grid grid-cols-1 mt-2 bg-white rounded-lg p-2">
                         <div className="font-bold border-b-2 border-black">
                             의견 추가
@@ -225,7 +233,7 @@ const Debate = () => {
                             
                         </div> */}
                     </div>
-                   
+                    
                 </div>
             </div>
             <Footer></Footer>

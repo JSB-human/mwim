@@ -1,5 +1,6 @@
 import axios from "axios";
 import moment from "moment";
+import { useSession } from "next-auth/react";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { Button } from "react-bootstrap";
@@ -7,6 +8,7 @@ import { Replys } from "../types/types";
 moment.locale('ko');
 
 const GameReply = (props: { gameType: number; }) => {
+    const { data : token, status } = useSession();
     const {gameType} = props;
 
     const router = useRouter();
@@ -15,8 +17,18 @@ const GameReply = (props: { gameType: number; }) => {
     const [reply, setReply] = useState([]);
     const [nickname, setNickname] = useState('');
     const [txt, setTxt] = useState(''); 
+    const [accountId, setAccountId] = useState('');
 
     useEffect(() => {
+        axios.get('/api/login_api')
+        .then((res) => {
+            setAccountId(res.data.sub);
+            axios.get(`/spring/account/select/${res.data.sub}`)
+            .then((res) => {
+                setNickname(res.data.nickname);
+            })
+        })
+
         if(result != undefined){
             let params = {
                 game_no : result,
@@ -40,7 +52,7 @@ const GameReply = (props: { gameType: number; }) => {
         axios.post('/spring/game_reply/add', {
             game_type : gameType,
             game_no : result,
-            writer : sub.data.sub,
+            writer : accountId,
             nickname : nickname,
             content : txt
         })
@@ -56,6 +68,11 @@ const GameReply = (props: { gameType: number; }) => {
             setTxt('');
         })
     }
+    const wantLogin = () => {
+        if(confirm("로그인 하시겠습니까?")){
+            router.push('/login');
+        }
+    }
 
     return(
         <>
@@ -63,16 +80,27 @@ const GameReply = (props: { gameType: number; }) => {
                     코멘트
                 </div>
                 <div className="bg-slate-200 w-full h-full border-t border-b border-black p-3">
-                    <div className="text-left mb-1">
-                        <input type={"text"} value={nickname} onChange={(e : React.FormEvent<HTMLInputElement>) : void => setNickname(e.currentTarget.value)}/>
-                    </div>
-                    <textarea className="w-full resize-none border border-black" placeholder="댓글 추가..."
-                        onChange={(e : React.ChangeEvent<HTMLTextAreaElement>) : void => setTxt(e.target.value)}
-                        value={txt}
-                    ></textarea>
-                    <div className="text-right">
-                        <Button variant="success" type="button" size="sm" onClick={AddReply}>작성</Button>
-                    </div>
+                    {
+                        token ? 
+                        <div>
+                            <textarea className="w-full resize-none border border-black" placeholder="댓글 추가..."
+                                onChange={(e : React.ChangeEvent<HTMLTextAreaElement>) : void => setTxt(e.target.value)}
+                                value={txt}
+                            ></textarea>
+                            <div className="text-right">
+                                <Button variant="success" type="button" size="sm" onClick={AddReply}>작성</Button>
+                            </div>
+                        </div>
+                        :
+                        <div onClick={wantLogin}>
+                            <textarea className="w-full resize-none border border-black" placeholder="로그인 해주세요."
+                                disabled={true}
+                            ></textarea>
+                            <div className="text-right">
+                                <Button variant="success" type="button" size="sm" disabled={true}>작성</Button>
+                            </div>
+                        </div>
+                    }
                 </div>
         <div className="bg-white w-full h-full text-left text-sm">
             {

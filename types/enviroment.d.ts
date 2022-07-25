@@ -8,5 +8,8 @@ namespace NodeJS{
 
         NAVER_CLIENT_ID : string
         NAVER_CLIENT_SECRET : string
+
+        EMAIL_SERVER : string
+        EMAIL_FROM : string
     }
 }

@@ -1,9 +1,14 @@
 import axios from "axios";
+import Link from "next/link";
 import { useRouter } from "next/router";
 import { ChangeEvent, useEffect, useState } from "react";
-import { Button } from "react-bootstrap";
+import { Button, ButtonGroup } from "react-bootstrap";
+import { BsFillPencilFill } from "react-icons/bs";
 import Footer from "../../../component/footer";
 import NavBar from "../../../component/navBar";
+import Post from "../../../component/post";
+import Share from "../../../component/share";
+import ShareBtns from "../../../component/shareBtns";
 
 const vote = () => {
     const router = useRouter();
@@ -85,6 +90,11 @@ const vote = () => {
                         </div>
                         <Button onClick={clickBtn} disabled={dis}>투표하기</Button>
                     </div>
+                    <ShareBtns
+                        newgame ={true}
+                        url={"/play/vote/makevote"} 
+                        btnTitle={"새 투표 만들기"} 
+                        title={`투표 - ${title}`}></ShareBtns>
                 </div>
             </div>
             <Footer></Footer>

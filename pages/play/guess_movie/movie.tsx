@@ -8,6 +8,7 @@ import { useRouter } from "next/router";
 import Footer from "../../../component/footer";
 import axios from "axios";
 import Image from "next/image";
+import ShareBtns from "../../../component/shareBtns";
 
 const Guess_Movie = () => {
     const router = useRouter();
@@ -101,6 +102,11 @@ const Guess_Movie = () => {
                 <div className="text-right pt-20">
                     <Button onClick={UpdateNo}>다음 영화</Button>
                 </div>
+                <ShareBtns
+                    newgame ={false}
+                    url={""} 
+                    btnTitle={""} 
+                    title={`영화 제목 맞추기`}></ShareBtns>
               </div>
              </div>
             </div>

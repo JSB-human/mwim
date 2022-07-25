@@ -8,6 +8,7 @@ import { Button } from "react-bootstrap";
 import Footer from "../../../component/footer";
 import GameReply from "../../../component/game_reply";
 import NavBar from "../../../component/navBar";
+import ShareBtns from "../../../component/shareBtns";
 
 const joke = () => {
     const router = useRouter();
@@ -69,16 +70,16 @@ const joke = () => {
                         }
                     </div>
                     <div className="text-right mt-3">
-                        <Link href={"/play/joke/makejoke"}>
-                            <a>
-                                <Button variant="warning">만들기</Button>
-                            </a>
-                        </Link>
                         <Button
-                            variant={"danger"}
+                            variant={"dark"}
                             onClick={nextJoke}
                         >다른 유머</Button>
                     </div>
+                    <ShareBtns
+                        newgame ={true}
+                        url={"/play/joke/makejoke"} 
+                        btnTitle={"새 유머 만들기"} 
+                        title={`유머 - ${title}`}></ShareBtns>
                     {/* <GameReply gameType={3}></GameReply> */}
                 </div>
             </div>

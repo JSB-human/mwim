@@ -6,6 +6,7 @@ import NavBar from "../../../component/navBar";
 import parse from 'html-react-parser';
 import {BsFillHeartFill} from 'react-icons/bs';
 import Footer from "../../../component/footer";
+import ShareBtns from "../../../component/shareBtns";
 
 interface Book {
     author : string;
@@ -154,6 +155,11 @@ const guess = () => {
                             <Button onClick={queryBtn} variant="primary"
                             >시작</Button>
                         </div>
+                        <ShareBtns
+                            newgame ={false}
+                            url={""} 
+                            btnTitle={""} 
+                            title={`책 가격 맞추기`}></ShareBtns>
                     </div>
                 </div>
                 :
@@ -221,6 +227,11 @@ const guess = () => {
                         >
                             키워드 변경
                         </Button>
+                        <ShareBtns
+                            newgame ={false}
+                            url={""} 
+                            btnTitle={""} 
+                            title={`책 가격 맞추기`}></ShareBtns>
                     </div>
                 </div>
             }

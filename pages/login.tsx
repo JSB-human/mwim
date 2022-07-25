@@ -4,20 +4,49 @@ import Image from "next/image";
 import axios from "axios";
 import { signIn, useSession } from "next-auth/react";
 import { AiFillFacebook } from "react-icons/ai";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { RiKakaoTalkFill } from "react-icons/ri";
 import { SiNaver } from "react-icons/si";
+import { AiOutlineMail } from "react-icons/ai";
+import { Button } from "react-bootstrap";
 
 const Login = ({ Component, pageProps }: AppProps) => {
     const { data : token, status } = useSession();
     const router = useRouter();
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [warningLabel, setWarningLabel] = useState('');
 
     useEffect(() => {
         if(token){
             router.push('/main');
         }
     },[token])
+
+    const emailLoginBtn = () => {
+        axios.post('/spring/account/login',{
+            account_id : email,
+            pwd : password
+        })
+        .then((res) => {
+            // console.log(res);
+            if(res.data === "일치"){
+                signIn("credentials", {username : email, password : password})
+            }else if(res.data === "틀림"){
+                setWarningLabel('이메일주소나 비밀번호가 틀립니다.');
+            }
+        })
+        .catch((err) => {
+            setWarningLabel('이메일주소나 비밀번호가 틀립니다.');
+        })
+    }
+
+    const pressEnter = (e: { key: string; }) => {
+        if(e.key === 'Enter'){
+            emailLoginBtn();
+        }
+    }
 
     return(
         <div className="bg-white h-full w-full">
@@ -34,36 +63,42 @@ const Login = ({ Component, pageProps }: AppProps) => {
                         <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="username">
                             이메일 주소
                         </label>
-                        <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="Username@email.com"/>
+                        <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="Username@email.com"
+                            value={email} onChange={(e)=>setEmail(e.target.value)}
+                        />
                         </div>
                         <div className="mb-6">
                         <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="password">
                             비밀번호
                         </label>
-                        <input className="shadow appearance-none border border-red-500 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" id="password" type="password" placeholder="******" />
-                        <p className="text-red-500 text-xs italic">비밀번호를 입력해주세요.</p>
+                        <input className="shadow appearance-none border border-red-500 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" id="password" type="password" placeholder="******" 
+                            value={password} onChange={(e)=>setPassword(e.target.value)}
+                            onKeyDown={pressEnter}
+                        />
+                        <p className="text-red-500 text-xs italic">{warningLabel}</p>
                         </div>
                         <div className="w-full">
-                            <Link href="/main" passHref>
-                                <button className="bg-black hover:bg-yellow-400 text-white w-full font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
-                                    로그인
-                                </button>
-                            </Link>
+                            <Button className="hover:bg-yellow-400 text-white w-full font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button"
+                                onClick={emailLoginBtn}
+                                variant="dark"
+                            >
+                                로그인
+                            </Button>
                         </div>
                         <div className="flex items-center justify-between mt-2 mb-2 p-2">
-                            <Link href="#">
+                            <Link href="findPwd">
                                 <a className="inline-block align-baseline font-bold text-sm text-black hover:text-yellow-400" href="#">
                                     비밀번호 찾기
                                 </a>
                             </Link>
-                            <Link href="#">
+                            <Link href="/register">
                                 <a className="inline-block align-baseline font-bold text-sm text-black hover:text-yellow-400" href="#">
                                     회원가입
                                 </a>
                             </Link>
                         </div>
                         <Link href="/main" passHref>
-                            <button className="bg-amber-600 hover:bg-yellow-400 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
+                            <button className="bg-red-400 hover:bg-yellow-400 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
                                 둘러보기
                             </button>
                         </Link>
@@ -88,6 +123,8 @@ const Login = ({ Component, pageProps }: AppProps) => {
                             <SiNaver color="#2DB400" className="inline text-[25px]"></SiNaver>
                             <span className="text-[16px] ml-3 text-gray-600 font-bold">Naver 로그인</span>
                         </div>
+
+                       
                         
                     </form>
                   

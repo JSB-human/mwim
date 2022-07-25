@@ -5,6 +5,7 @@ import { ChangeEvent, ChangeEventHandler, useEffect, useRef, useState } from "re
 import { Button, Spinner } from "react-bootstrap";
 import Footer from "../../../component/footer";
 import NavBar from "../../../component/navBar";
+import ShareBtns from "../../../component/shareBtns";
 
 const HangMan = () => {
     const router = useRouter();
@@ -194,17 +195,17 @@ const HangMan = () => {
                     </div>
 
                     <div className="mt-5 text-right">
-                        <Link href={"#"}>
-                            <a>
-                                <Button variant="warning">##</Button>
-                            </a>
-                        </Link>
                         <Button
                             variant={"danger"}
                             onClick={retry}
                             
                         >다시하기</Button>  
                     </div>
+                    <ShareBtns
+                        newgame ={false}
+                        url={""} 
+                        btnTitle={""} 
+                        title={`행맨 게임`}></ShareBtns>
                 </div>
             </div>
             <Footer></Footer>

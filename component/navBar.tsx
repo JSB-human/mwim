@@ -2,43 +2,81 @@ import { getToken } from "next-auth/jwt";
 import { signOut, useSession } from "next-auth/react";
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import {FaUser, FaBars} from "react-icons/fa";
 import {IoPersonCircle, IoLogInOutline} from "react-icons/io5";
+import {AiFillSetting} from "react-icons/ai";
+import axios from "axios";
+import { Button, Form, InputGroup } from "react-bootstrap";
+import { FaSearch } from 'react-icons/fa';
+import { useRouter } from "next/router";
 
 const NavBar = () => {
+    const { data : token, status } = useSession();
+    const [uid, setUid] = useState('');
+    const [searchTxt, setSearchTxt] = useState<string>('');
+    const router = useRouter();
 
     useEffect(() => {
-        
-        // console.log(login_api);
-    })
+        axios.get('/api/login_api')
+        .then((res) => {
+            axios.get(`/spring/account/select/${res.data.sub}`)
+            .then((res) => {
+                setUid(res.data.uid);
+            })
+        })
+        // console.log(token);
+    },[])
 
-    const { data : token, status } = useSession();
-    // console.log('token',token);
+    const SearchEnter = (e : any) => {
+        if(searchTxt === ''){
+            return;
+        }
+
+        if(e.key === 'Enter'){
+            router.push(`/user/${searchTxt}`)
+        }
+    }
+    const Search = () => {
+        router.push(`/user/${searchTxt}`)
+    }
+ 
     return(
-        <div className="grid grid-cols-3 bg-blue-800 border-b border-gray-300 p-1 text-white h-full"> 
-                <div className="grid grid-cols-2">
-                    {/* <FaBars size={25}/> */}
-                    {/* <div className="place-self-center">
-                        내 세상
-                    </div>
-                    <div className="place-self-center">
-                        친구 세상0
-                    </div> */}
-                </div>
-                <div className='font-blackhansans text-sm text-center relative h-[55px]'>
+        <div className="grid grid-cols-3 bg-indigo-800 border-b border-gray-300 p-1 text-white h-full"> 
+                <div className='font-blackhansans text-sm relative h-[55px]'>
                     <Link href="/main">
                         <a>
                             <Image src={"/main_logo.png"} layout="fill" objectFit="contain"/>
                         </a>
                     </Link>
                 </div>
+                <div className="grid grid-cols-1">
+                     <InputGroup className="rounded-lg text-black p-2 font-bold">
+                        <Form.Control
+                        type="search"
+                        placeholder="사용자 검색"
+                        value={searchTxt}
+                        onChange={(e) => {setSearchTxt(e.target.value)}}
+                        onKeyDown={(e) => SearchEnter(e)}
+                        />
+                        <Button variant="dark" id="button-addon2"
+                            onClick={Search}
+                        >
+                            <FaSearch size={20}></FaSearch>
+                        </Button>
+                    </InputGroup>
+                </div>
                 <div className="place-self-center">
                     {/* <FaUser size={25}/> */}
-                    {token ? <div className="hover:cursor-pointer font-bold">
-                                <Link href={"/mypage/1"}>
+                    {token ? <div className="hover:cursor-pointer font-bold flex gap-2">
+                                <Link href={`/user/${uid}`}>
                                     <a className="text-white">
-                                     <IoPersonCircle size={40}/>
+                                        <IoPersonCircle size={35}/>
+                                    </a>
+                                </Link>
+                                <Link href={"/mypage/setting"}>
+                                    <a className="text-white">
+                                        <AiFillSetting size={32}/>
                                     </a>
                                 </Link>
                             </div> 

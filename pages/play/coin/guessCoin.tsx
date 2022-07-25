@@ -6,6 +6,7 @@ import NavBar from "../../../component/navBar";
 import Footer from "../../../component/footer";
 import upbitCoins from '../../../jsons/coins.json';
 import ProgressBar from 'react-bootstrap/ProgressBar';
+import ShareBtns from "../../../component/shareBtns";
 
 interface coinJsonType {
     market : string;
@@ -241,6 +242,11 @@ const GuessCoin = () => {
                         <Button className="ml-2"
                             variant="danger"
                         >다른 게임</Button>
+                        <ShareBtns
+                            newgame ={false}
+                            url={""} 
+                            btnTitle={""} 
+                            title={`코인 가격 맞추기`}></ShareBtns>
                     </div>
                 </div>
             <Footer></Footer>

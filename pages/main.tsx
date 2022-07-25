@@ -210,9 +210,9 @@ const Main = () => {
                         <Card>
                             <Card.Img variant="top" src="" />
                             <Card.Body>
-                                <Card.Title>코인 가격 맞추기</Card.Title>
+                                <Card.Title>코인 가격 예측</Card.Title>
                                 <Card.Text>
-                                    현재 코인 가격을 맞춰보세요.
+                                    현재 코인 가격을 예측하세요.
                                 </Card.Text>
                                 <Link href="/play/coin/guessCoin">
                                     <a> 
