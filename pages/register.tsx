@@ -188,7 +188,7 @@ const Register = () => {
                 <div className='relative h-[120px] w-52'>
                     <Link href={"/login"} >
                         <a>
-                            <Image src={"/main_logo.png"} layout="fill" objectFit="contain"/>
+                            <Image src={"/main_logo.png"} layout="fill" objectFit="contain" alt="이미지"/>
                         </a>
                     </Link>
                 </div>

@@ -1,6 +1,6 @@
 import axios from "axios";
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { Button } from "react-bootstrap";
 import NavBar from "../../../component/navBar";
 import Footer from "../../../component/footer";
@@ -68,30 +68,8 @@ const GuessCoin = () => {
         })
     },[])
 
-    useEffect(() => {
-        const timer = setInterval(() => {
-            if(seconds === 0){
-                clearInterval(timer);
-                checkPrice();
-            }else{
-                setSeconds(seconds-1);
-            }
-        }, 1000)
-        return () => clearInterval(timer);
-    }, [seconds])
-
-    useEffect(() => {
-        const gaugeTimer = setInterval(() => {
-            if(progress < 1){
-                clearInterval(gaugeTimer);
-            }else{
-                setProgress(progress-0.333333)
-            }
-        }, 100)
-        return () => clearInterval(gaugeTimer);
-    }, [progress])
-
-    const checkPrice = () => {
+    
+    const checkPrice = useCallback(() => {
         axios.get(`/upbit_coin/v1/ticker?markets=${upbitCoins[nowIndex].market}`)
         .then((res) => {
             setNowCoinJson(res.data[0])
@@ -105,7 +83,34 @@ const GuessCoin = () => {
         .catch((err) => {
             console.log(err);
         })
-    }
+    },[guess, nowIndex])
+
+    useEffect(() => {
+
+        const timer = setInterval(() => {
+            if(seconds === 0){
+                clearInterval(timer);
+                checkPrice();
+            }else{
+                setSeconds(seconds-1);
+            }
+        }, 1000)
+        return () => clearInterval(timer);
+    }, [seconds, checkPrice])
+
+    useEffect(() => {
+        
+        const gaugeTimer = setInterval(() => {
+            if(progress < 1){
+                clearInterval(gaugeTimer);
+            }else{
+                setProgress(progress-0.333333)
+            }
+        }, 100)
+        return () => clearInterval(gaugeTimer);
+    }, [progress])
+
+   
 
     const reset = () => {
         setCoinJson(cj);

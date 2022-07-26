@@ -10,7 +10,7 @@ import ShareBtns from "../../../component/shareBtns";
 const HangMan = () => {
     const router = useRouter();
     const canvas : any = useRef();
-    let ctx = null;
+    
     const [playCnt, setPlaycnt] = useState(0);
     const [chance, setChance] = useState<number>(0);
     const [answer, setAnswer] = useState<string>('');
@@ -41,6 +41,7 @@ const HangMan = () => {
         const canvasEle = canvas.current;
         canvasEle.width = canvasEle.clientWidth;
         canvasEle.height = canvasEle.clientHeight;
+        let ctx = null;
 
         ctx = canvasEle.getContext("2d");
 
@@ -116,7 +117,7 @@ const HangMan = () => {
             setDis(true);
         }
 
-    },[chance])
+    },[chance, answer, wrongTxt])
 
     // useEffect(() => {
     //     console.log(answer, nowWord.includes('_'));

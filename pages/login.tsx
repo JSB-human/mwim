@@ -22,7 +22,7 @@ const Login = ({ Component, pageProps }: AppProps) => {
         if(token){
             router.push('/main');
         }
-    },[token])
+    },[token, router])
 
     const emailLoginBtn = () => {
         axios.post('/spring/account/login',{
@@ -56,7 +56,7 @@ const Login = ({ Component, pageProps }: AppProps) => {
                         {/* <p className='text-blue-400'>내가</p>
                         <p className='text-purple-500'>만든</p>
                         <p className='text-red-400'>세상</p> */}
-                        <Image src={"/main_logo.png"} layout="fill" objectFit="contain"/>
+                        <Image src={"/main_logo.png"} layout="fill" objectFit="contain" alt="이미지"/>
                     </div>
                     <form className="bg-white  rounded px-8 pt-6 pb-8 mb-4 max-w-xl font-sans mt-6 min-w-min">
                         <div className="mb-4">
@@ -107,7 +107,7 @@ const Login = ({ Component, pageProps }: AppProps) => {
                         
                         <div className="border border-black hover:cursor-pointer hover:bg-gray-200" 
                             onClick={()=>signIn('kakao')} >
-                            {/* <Image src={"/kakao_login_large_wide.png"} layout="fill" objectFit="contain"/>*/}
+                            {/* <Image src={"/kakao_login_large_wide.png"} layout="fill" objectFit="contain" alt="이미지"/> */}
                             <RiKakaoTalkFill className="inline text-[25px]"></RiKakaoTalkFill>
                             <span className="text-[16px] ml-3 text-gray-600 font-bold">Kakaotalk 로그인</span>
                         </div>

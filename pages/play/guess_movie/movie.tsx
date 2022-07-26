@@ -66,6 +66,7 @@ const Guess_Movie = () => {
                         <Image src={`https://image.tmdb.org/t/p/original/${randuri}`} 
                             width={800}
                             height={500}
+                            alt="이미지"
                         />
                     }
                     
@@ -85,6 +86,7 @@ const Guess_Movie = () => {
                             <Image src={`https://image.tmdb.org/t/p/original/${posterUri}`} 
                                 width={800}
                                 height={1200}
+                                alt = "이미지"
                             />
                         </div>
                         <div>

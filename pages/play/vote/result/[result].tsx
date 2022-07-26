@@ -102,14 +102,14 @@ const Balance_Result = () => {
                     </div>
                 </div>
                 <div className="text-right">
-                    <Link href="/main">
+                    <Link href="/main" passHref>
                         <Button variant="primary" type="button" size="sm">
                             <a>
                                 다른 게임 하러가기
                             </a>
                         </Button>
                     </Link>
-                    <Link href="/play/vote/0">
+                    <Link href="/play/vote/0" passHref>
                         <Button variant="danger" type="button" size="sm">
                             <a>
                                 다음

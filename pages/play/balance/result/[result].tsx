@@ -73,14 +73,14 @@ const Balance_Result = () => {
                     <span style={{width : `${rightP}%`}} className="rounded-r-full h-full inline-flex justify-center items-center bg-red-400">{rightCnt}</span>
                 </div>
                 <div className="text-right">
-                    <Link href="/main">
+                    <Link href="/main" passHref >
                         <Button variant="primary" type="button" size="sm">
                             <a>
                                 다른 게임 하러가기
                             </a>
                         </Button>
                     </Link>
-                    <Link href="/play/balance/0">
+                    <Link href="/play/balance/0" passHref >
                         <Button variant="danger" type="button" size="sm">
                             <a>
                                 다음

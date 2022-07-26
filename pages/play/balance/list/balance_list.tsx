@@ -36,7 +36,7 @@ const Balance_List = () => {
         })
     }, [])
 
-    const getItems = (last_game_no : number) => {
+    const getItems = useCallback((last_game_no : number) => {
         setLoading(true);
         axios.get(`/spring/play/balance/list/${last_game_no}`)
         .then((res) => {
@@ -46,7 +46,7 @@ const Balance_List = () => {
             setNewGames(res.data);
         })
         setLoading(false);
-    }
+    },[games])
 
 
     useEffect(() => {
@@ -60,7 +60,7 @@ const Balance_List = () => {
                 }
             }
         }
-    }, [inView, loading])
+    }, [inView, loading, getItems, newGames])
     
     const gamesArr = games?.map((val, i) => {
         return(

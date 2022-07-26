@@ -12,7 +12,7 @@ const Home: NextPage = () => {
       <main className="grid">
         <div className='row'>
           <div className='relative h-[240px] w-52'>
-           <Image src={"/main_logo.png"} layout="fill" objectFit="contain"/>
+           <Image src={"/main_logo.png"} layout="fill" objectFit="contain" alt={"이미지"}/>
           </div>
         </div>
 

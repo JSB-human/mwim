@@ -28,7 +28,7 @@ const LoadLogin = () => {
                 setLoad(false);
             }
         })
-    }, [])
+    }, [router])
 
     useEffect(() => {
         if(!uidBad && !nicknameBad){
@@ -119,7 +119,7 @@ const LoadLogin = () => {
         <div className="w-full h-screen bg-gray-100 text-center p-10">
             <div className="flex justify-center mb-5">
                 <div className='relative h-[120px] w-52'>
-                    <Image src={"/main_logo.png"} layout="fill" objectFit="contain"/>
+                    <Image src={"/main_logo.png"} layout="fill" objectFit="contain" alt={"이미지"}/>
                 </div>
             </div>
             {load ? 

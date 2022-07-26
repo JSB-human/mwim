@@ -37,7 +37,7 @@ const Guess = () => {
             setFinish(true);
             setStatusTxt(`실패! 값 : ${bookArr[nowIndex].price}원`);
         }
-    },[heart])
+    },[heart, bookArr, nowIndex])
 
     useEffect(() => {
         if(nowIndex === 0){
@@ -46,7 +46,7 @@ const Guess = () => {
         if(nowIndex === nowDisplay){
             setHideNext(true);
         }
-    }, [nowIndex])
+    }, [nowIndex, nowDisplay])
 
     const queryBtn = () => {
         if(queryTxt === ''){
@@ -174,6 +174,7 @@ const Guess = () => {
                                     src={bookArr[nowIndex].image}
                                     width={82}
                                     height={120}
+                                    alt="이미지"
                                 />
                             </div>
                             <div className="w-4/5">
