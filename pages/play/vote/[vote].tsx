@@ -22,7 +22,7 @@ const Vote = () => {
     useEffect(() => {
         axios.get('/spring/vote/view/rand')
         .then((res)=> {
-            console.log(res);
+            // console.log(res);
             setTitle(res.data.title);
             setVote(JSON.parse(res.data.vote));
             setVoteNo(res.data.vote_no);

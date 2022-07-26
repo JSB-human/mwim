@@ -4,7 +4,7 @@ const Footer = () => {
 
     return(
         <footer className="bg-gray-50 text-gray-500 text-center">
-            ©2022 MWIM. All rights reserved.
+            ©2022 NGMDSS. All rights reserved.
         </footer>
     )
 }

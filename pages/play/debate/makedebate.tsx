@@ -31,7 +31,7 @@ const MakeDebate = () => {
             opinion2 : opinion2
         })
         .then(() => {
-
+            router.push('/play/debate/0');
         })
     }
 
