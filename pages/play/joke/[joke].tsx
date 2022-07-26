@@ -10,7 +10,7 @@ import GameReply from "../../../component/game_reply";
 import NavBar from "../../../component/navBar";
 import ShareBtns from "../../../component/shareBtns";
 
-const joke = () => {
+const Joke = () => {
     const router = useRouter();
 
     const [title, setTitle] = useState('');
@@ -88,4 +88,4 @@ const joke = () => {
     )
 }
 
-export default joke;
+export default Joke;

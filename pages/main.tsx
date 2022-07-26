@@ -49,7 +49,7 @@ const Main = () => {
                                         </Button>
                                     </a>
                                 </Link>
-                                <Link href="/play/balance/list/balance_list">
+                                {/* <Link href="/play/balance/list/balance_list">
                                     <a>
                                         <Button variant="danger">
                                             <span className="flex">
@@ -58,7 +58,7 @@ const Main = () => {
                                             </span>
                                         </Button>
                                     </a>
-                                </Link>
+                                </Link> */}
                             </Card.Body>
                         </Card>
                     </div>
@@ -90,7 +90,7 @@ const Main = () => {
                                         </Button>
                                     </a>
                                 </Link>
-                                <Link href="/play/balance/list/balance_list">
+                                {/* <Link href="/play/balance/list/balance_list">
                                     <a>
                                         <Button variant="danger">
                                             <span className="flex">
@@ -99,7 +99,7 @@ const Main = () => {
                                             </span>
                                         </Button>
                                     </a>
-                                </Link>
+                                </Link> */}
                             </Card.Body>
                         </Card>
                     </div>
@@ -193,7 +193,7 @@ const Main = () => {
                                         </Button>
                                     </a>
                                 </Link>
-                                <Link href="#">
+                                {/* <Link href="#">
                                     <a>
                                         <Button variant="danger">
                                             <span className="flex">
@@ -202,7 +202,7 @@ const Main = () => {
                                             </span>
                                         </Button>
                                     </a>
-                                </Link>
+                                </Link> */}
                             </Card.Body>
                         </Card>
                     </div>

@@ -20,7 +20,7 @@ interface Book {
     title : string;
 }
 
-const guess = () => {
+const Guess = () => {
     const [mode, setMode] = useState(1);
     const [queryTxt, setQueryTxt] = useState('');
     const [bookArr, setBookArr] = useState<Array<Book>>([]);
@@ -244,4 +244,4 @@ const guess = () => {
 }
 
 
-export default guess;
+export default Guess;

@@ -54,7 +54,7 @@ export default NextAuth({
                 return '/login';
             } 
             else if(url.startsWith("/")){
-                return '/loading/loadLogin';
+                return '/loading/LoadLogin';
             }
             return baseUrl;
         }

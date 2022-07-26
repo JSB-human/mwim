@@ -110,7 +110,7 @@ const World_Reply = (props : {world_no : number}) => {
                 reply.map((val, i) => {
                     return(
                         <div className="" key={i}>
-                            <div><b>{`${val.nickname} ${moment(val.writeTime).format('MM/DD HH:mm')}`}</b></div>
+                            <div><b>{`${val.nickname}  `}</b>{ `${moment(val.writeTime).format('MM/DD HH:mm')}`}</div>
                             <div>{val.comment}</div>
                         </div>
                     )

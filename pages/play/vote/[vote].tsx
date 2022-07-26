@@ -10,7 +10,7 @@ import Post from "../../../component/post";
 import Share from "../../../component/share";
 import ShareBtns from "../../../component/shareBtns";
 
-const vote = () => {
+const Vote = () => {
     const router = useRouter();
 
     const [title, setTitle] = useState('');
@@ -102,4 +102,4 @@ const vote = () => {
     )
 }
 
-export default vote;
+export default Vote;

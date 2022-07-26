@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import { Button, Spinner } from "react-bootstrap";
 import login_api from "../api/login_api";
 
-const loadLogin = () => {
+const LoadLogin = () => {
     const router = useRouter();
     const [load, setLoad] = useState(true);
     const [nickName, setNickName] = useState('');
@@ -38,7 +38,7 @@ const loadLogin = () => {
         }
     },[uidBad, nicknameBad])
 
-    const checkNickname = () => {
+    const CheckNickname = () => {
         if(nickName === ""){
             setLabel('닉네임을 입력해주세요.');
             setNicknameBad(true);
@@ -57,7 +57,7 @@ const loadLogin = () => {
         })
     }
 
-    const checkUid = () => {
+    const CheckUid = () => {
         if(uid === ""){
             setUidLabel('아이디를 입력해주세요.');
             setUidBad(true);
@@ -75,7 +75,7 @@ const loadLogin = () => {
         })
     }
 
-    const changeBtn = () => {
+    const ChangeBtn = () => {
         if(nicknameBad === true){
             return;
         }
@@ -173,7 +173,7 @@ const loadLogin = () => {
                     className="w-full h-15 rounded-lg p-2 text-2xl text-center border border-black"
                     value={uid}
                     onChange={(e)=>setUid(e.target.value)}
-                    onBlur={checkUid}
+                    onBlur={CheckUid}
                 />
                 <h5>{uidLabel}</h5>
                 <h1>닉네임을 정해주세요.</h1>
@@ -181,13 +181,13 @@ const loadLogin = () => {
                     className="w-full h-15 rounded-lg p-2 text-2xl text-center border border-black"
                     value={nickName}
                     onChange={(e)=>setNickName(e.target.value)}
-                    onBlur={checkNickname}
+                    onBlur={CheckNickname}
                 />
                 <h5>{label}</h5>
                 <Button
                     className="w-full mt-5"
                     variant="dark"
-                    onClick={changeBtn}
+                    onClick={ChangeBtn}
                     disabled={bad}
                 >시작하기</Button>
             </div>
@@ -199,4 +199,4 @@ const loadLogin = () => {
 
 }
 
-export default loadLogin;
+export default LoadLogin;
