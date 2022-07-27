@@ -44,7 +44,7 @@
   },
   "proxy": {
     "/spring": {
-      "target": "http://localhost:8080/"
+      "target": "https://ngmdss.ga/"
     },
     "/naver_book": {
       "target": "https://openapi.naver.com"
