@@ -36,6 +36,9 @@ const Balance = () => {
                 setRight(res.data.title2);
                 setWriter(res.data.maker);
             })
+            .catch((err) => {
+                console.log(err);
+            })
         }else{
             axios.get('/spring/play/balance/get/' + balance)
             .then((res) => {
