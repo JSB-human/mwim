@@ -49,7 +49,7 @@ const Joke = () => {
     return(
         <>
             <NavBar/>
-            <div className="h-screen bg-gray-100">
+            <div className="h-full min-h-screen bg-gray-100">
                 <div className="container mx-auto px-4 text-center">
                     <div className="text-center text-3xl">
                         <b className="">고급 유머</b>

@@ -23,7 +23,7 @@ const LoadLogin = () => {
         .then((res) => {
             // console.log(res.data.sub)
             if(res.data.sub === undefined){
-                router.push("/login");
+                // router.push("/login");
             }else{
                 setLoad(false);
             }
@@ -116,7 +116,7 @@ const LoadLogin = () => {
 
 
     return (
-        <div className="w-full h-screen bg-gray-100 text-center p-10">
+        <div className="w-full h-full min-h-screen bg-gray-100 text-center p-10">
             <div className="flex justify-center mb-5">
                 <div className='relative h-[120px] w-52'>
                     <Image src={"/main_logo.png"} layout="fill" objectFit="contain" alt={"이미지"}/>

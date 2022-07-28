@@ -164,7 +164,7 @@ const HangMan = () => {
     return(
         <>
             <NavBar/>
-            <div className="h-screen min-h-full bg-gray-100">
+            <div className="h-full min-h-screen bg-gray-100">
                 <div className="container mx-auto px-4 text-center h-full">
                     <div className="text-center text-3xl">
                         <b className="">행맨</b>

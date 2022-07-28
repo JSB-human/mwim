@@ -89,7 +89,7 @@ const Balance = () => {
                 <meta property="og:image" content="https://ia.media-imdb.com/images/rock.jpg" />
             </Head> */}
             <NavBar/>
-            <div className="h-screen min-h-full bg-slate-100">
+            <div className="h-full min-h-screen bg-slate-100">
                 <div className="container mx-auto px-4">
                     <div className="text-center text-3xl">
                         <b className="">밸런스 게임</b>
