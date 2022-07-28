@@ -6,6 +6,7 @@ import { Button, Spinner } from "react-bootstrap";
 import Footer from "../../../component/footer";
 import NavBar from "../../../component/navBar";
 import ShareBtns from "../../../component/shareBtns";
+import wordJson from "../../../jsons/wordJson.json";
 
 const HangMan = () => {
     const router = useRouter();
@@ -24,10 +25,12 @@ const HangMan = () => {
     const [loading, setLoading] = useState(false);
 
     useEffect(() => {
+        const rand = Math.floor(Math.random() * wordJson.length);
+
         axios('/random_words')
         .then((res) => {
-            setAnswer(res.data[0]);
-            const cnt = res.data[0].length;
+            setAnswer(wordJson[rand]);
+            const cnt = wordJson[rand].length;
             let Arr : string[] = [];
             for(var i=0; i<cnt; i++){
                 Arr.push('_');
@@ -161,7 +164,7 @@ const HangMan = () => {
     return(
         <>
             <NavBar/>
-            <div className="min-h-screen h-full bg-gray-100">
+            <div className="h-screen min-h-full bg-gray-100">
                 <div className="container mx-auto px-4 text-center h-full">
                     <div className="text-center text-3xl">
                         <b className="">행맨</b>

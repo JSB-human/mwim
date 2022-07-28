@@ -72,7 +72,9 @@ const UserPage = () => {
                 {
                     notFound ? 
                     <div className="container">
-                        없음
+                        <div className="text-center p-10">
+                            <h1>사용자를 찾을 수 없습니다.</h1>
+                        </div>
                     </div>
                     :
                     <div className="container">
