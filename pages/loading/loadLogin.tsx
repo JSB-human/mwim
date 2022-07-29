@@ -90,38 +90,37 @@ const LoadLogin = () => {
         if(nicknameBad === true){
             return;
         }
-        axios.get('/api/login_api')
-        .then((res) => {
-            // console.log(res.data.sub)
-            if(res.data.sub === undefined){
-                router.push("/login");
-            }else{
-                axios.get('/spring/account/select/' + res.data.sub)
-                .then((res2) => {
-                    if(res2.data === ""){
-                        axios.post('/spring/account/insert',{
-                            account_id : res.data.sub,
-                            uid : uid,
-                            email : res.data.email,
-                            name : res.data.name,
-                            nickname : nickName,
-                            social : 'social'
-                        })
-                        .then((res3) => {
-                            // console.log(res3);
-                            if(res3.data === 1){
-                                router.push("/main");
-                            }
-                        })
-                        .catch((err) => {
-                            alert('서버에 문제가 있습니다. 다시 시도해주세요.');
-                        })
-                    }else{
-                        router.push("/main");
-                    }
-                })
-            }
-        })
+        
+        // console.log(res.data.sub)
+        if(token?.sub === undefined){
+            router.push("/login");
+        }else{
+            axios.get('/spring/account/select/' + token?.sub)
+            .then((res2) => {
+                if(res2.data === ""){
+                    axios.post('/spring/account/insert',{
+                        account_id : token?.sub,
+                        uid : uid,
+                        email : token?.email,
+                        name : token?.name,
+                        nickname : nickName,
+                        social : 'social'
+                    })
+                    .then((res3) => {
+                        // console.log(res3);
+                        if(res3.data === 1){
+                            router.push("/main");
+                        }
+                    })
+                    .catch((err) => {
+                        alert('서버에 문제가 있습니다. 다시 시도해주세요.');
+                    })
+                }else{
+                    router.push("/main");
+                }
+            })
+        }
+        
     }
 
 
