@@ -30,7 +30,7 @@ const LoadLogin = () => {
             axios.get('/api/login_api')
             .then((res) => {
                 if(res.data.sub === undefined){
-                    console.log('2');
+                    console.log(res);
                     router.push("/login");
                 }else{
                     console.log('3');
