@@ -22,9 +22,11 @@ const LoadLogin = () => {
 
     useEffect(() => {
         if(!token){
-            router.push("/login");
+            console.log(token);
+            // router.push("/login");
         }else{
             setLoad(false);
+            console.log(token);
         }
         // axios.get('/api/login_api')
         // .then((res) => {
@@ -35,7 +37,7 @@ const LoadLogin = () => {
         //         setLoad(false);
         //     }
         // })
-    }, [router])
+    }, [router, token])
 
     useEffect(() => {
         if(!uidBad && !nicknameBad){
