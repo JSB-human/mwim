@@ -1,4 +1,5 @@
 import axios from "axios";
+import { useSession } from "next-auth/react";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
@@ -6,6 +7,7 @@ import { Button, Spinner } from "react-bootstrap";
 import login_api from "../api/login_api";
 
 const LoadLogin = () => {
+    const { data : token, status } = useSession();
     const router = useRouter();
     const [load, setLoad] = useState(true);
     const [nickName, setNickName] = useState('');
@@ -19,15 +21,20 @@ const LoadLogin = () => {
     const [bad, setBad] = useState(true);
 
     useEffect(() => {
-        axios.get('/api/login_api')
-        .then((res) => {
-            // console.log(res.data.sub)
-            if(res.data.sub === undefined){
-                // router.push("/login");
-            }else{
-                setLoad(false);
-            }
-        })
+        if(!token){
+            router.push("/login");
+        }else{
+            setLoad(false);
+        }
+        // axios.get('/api/login_api')
+        // .then((res) => {
+        //     console.log(res.data.sub)
+        //     if(res.data.sub === undefined){
+        //         router.push("/login");
+        //     }else{
+        //         setLoad(false);
+        //     }
+        // })
     }, [router])
 
     useEffect(() => {
