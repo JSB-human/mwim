@@ -31,7 +31,7 @@ const UserPage = () => {
         nickname : ''
     });
     const [worlds, setWorlds] = useState<Array<worldJson>>([]);
-    const [worldLength, setWorldLength] = useState(0);
+    const [worldExist, setWorldExist] = useState(0);
 
     const userId = router.query.user || '';
 
@@ -51,11 +51,12 @@ const UserPage = () => {
 
             axios.get(`/spring/world/get/${userId}`)
             .then((res) => {
+                console.log(res);
                 setWorlds(res.data);
-                if(res.data !== ''){
-                    setWorldLength(1);
+                if(res.data.length > 0){
+                    setWorldExist(1);
                 }else{
-                    setWorldLength(0);
+                    setWorldExist(0);
                 }
                 
             })
@@ -85,7 +86,7 @@ const UserPage = () => {
                         <hr></hr>
                         <div className="">
                             {
-                            worldLength === 1?
+                            worldExist === 1?
                             
                             worlds.map((val, i) => {
                                 return(
@@ -125,7 +126,7 @@ const UserPage = () => {
                             })
                             :
                             <div>
-                                없음
+                                포스팅 없음
                             </div>
 
                             }

@@ -23,22 +23,18 @@ const LoadLogin = () => {
     useEffect(() => {
         if(token === null){
             router.push("/login");
-            // console.log("token1");
         }
-
         if(token!==undefined && token!==null){
-            setLoad(false);
-            // console.log("token2");
+            // setLoad(false);
+            axios.get('/api/login_api')
+            .then((res) => {
+                if(res.data.sub === undefined){
+                    router.push("/login");
+                }else{
+                    setLoad(false);
+                }
+            })
         }
-        // axios.get('/api/login_api')
-        // .then((res) => {
-        //     console.log(res.data.sub)
-        //     if(res.data.sub === undefined){
-        //         router.push("/login");
-        //     }else{
-        //         setLoad(false);
-        //     }
-        // })
     }, [router, token])
 
     useEffect(() => {
@@ -91,33 +87,35 @@ const LoadLogin = () => {
             return;
         }
         
-        console.log(token?.sub)
-        if(token?.sub === undefined){
+        if(token === undefined){
+            alert("서버에 문제가 있습니다. 다시 시도해주세요.");
             router.push("/login");
         }else{
-            axios.get('/spring/account/select/' + token?.sub)
-            .then((res2) => {
-                if(res2.data === ""){
-                    axios.post('/spring/account/insert',{
-                        account_id : token?.sub,
-                        uid : uid,
-                        email : token?.email,
-                        name : token?.name,
-                        nickname : nickName,
-                        social : 'social'
-                    })
-                    .then((res3) => {
-                        // console.log(res3);
-                        if(res3.data === 1){
-                            router.push("/main");
-                        }
-                    })
-                    .catch((err) => {
-                        alert('서버에 문제가 있습니다. 다시 시도해주세요.');
-                    })
-                }else{
-                    router.push("/main");
-                }
+            axios.get('/api/login_api')
+            .then((res) => {
+                axios.get('/spring/account/select/' + res.data.sub)
+                .then((res2) => {
+                    if(res2.data === ""){
+                        axios.post('/spring/account/insert',{
+                            account_id : res.data.sub,
+                            uid : uid,
+                            email : res.data.email,
+                            name : res.data.name,
+                            nickname : nickName,
+                            social : 'social'
+                        })
+                        .then((res3) => {
+                            if(res3.data === 1){
+                                router.push("/main");
+                            }
+                        })
+                        .catch((err) => {
+                            alert('서버에 문제가 있습니다. 다시 시도해주세요.');
+                        })
+                    }else{
+                        router.push("/main");
+                    }
+                })
             })
         }
         

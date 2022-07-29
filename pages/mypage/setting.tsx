@@ -1,5 +1,5 @@
 import axios from "axios";
-import { signOut } from "next-auth/react";
+import { signOut, useSession } from "next-auth/react";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { Button } from "react-bootstrap";
@@ -9,19 +9,39 @@ import {IoCaretBackCircleSharp} from 'react-icons/io5';
 
 
 const MyPage = () => {
+    const { data : token, status } = useSession();
+    const router = useRouter();
+
     const [nowNickName, setNowNickName] = useState('');
     const [accountId, setAccountId] = useState('');
     const [modeLabel, setModeLabel] = useState('설정');
     const [mode, setMode] = useState('default');
     const [nickName, setNickName] = useState('');
-    const [pwd, se] = useState('');
+    const [pwd, setPwd] = useState('');
 
     const [nickNameLabel, setNickNameLabel] = useState('');
     const [pwdLabel, setPwdLabel] = useState('8-16자 영문, 숫자, 특수문자 최소 1개 조합');
     const [nickNameGood, setNickNameGood] = useState(false);
     const [pwdGood, setPwdGood] = useState(false);
 
+    const [social, setSocial] = useState('');
+
     useEffect(() => {
+        if(token === null){
+            router.push("/login");
+        }
+
+        if(mode === 'default'){
+            axios.get('/api/login_api')
+            .then((res) => {
+                setAccountId(res.data.sub);
+                axios.get(`/spring/account/select/${res.data.sub}`)
+                .then((res) => {
+                    setSocial(res.data.social);
+                })
+            })
+        }
+
         if(mode === 'nickname'){
             let accountId = "";
             axios.get('/api/login_api')
@@ -38,7 +58,7 @@ const MyPage = () => {
             })
         }
 
-    }, [mode])
+    }, [mode, router, token])
     
     const checkNickname = () => {
         if(nickName === ''){
@@ -134,11 +154,17 @@ const MyPage = () => {
                             >
                                 닉네임 변경
                             </div>
-                            <div className="text-white font-bold p-2 mt-4 rounded-lg bg-blue-500 shadow-lg shadow-blue-500/50 hover:bg-black hover:cursor-pointer"
-                                onClick={() => setMode('password')}
-                            >
-                                비밀번호 변경
-                            </div>
+                            {
+                                social === 'social' ?
+                                <></>
+                                :
+                                <div className="text-white font-bold p-2 mt-4 rounded-lg bg-blue-500 shadow-lg shadow-blue-500/50 hover:bg-black hover:cursor-pointer"
+                                    onClick={() => setMode('password')}
+                                >
+                                    비밀번호 변경
+                                </div>
+                            }
+                           
                             <div className="text-white font-bold p-2 mt-4 rounded-lg bg-indigo-500 shadow-lg shadow-indigo-500/50 hover:bg-black hover:cursor-pointer"
                                 onClick={() => signOut()}
                             >
@@ -178,7 +204,7 @@ const MyPage = () => {
                             <input type="password"
                                 className="border-black border w-full p-2"
                                 value={pwd}
-                                onChange={(e)=>{se(e.target.value)}}
+                                onChange={(e)=>{setPwd(e.target.value)}}
                                 onBlur={checkPwd}
                             />
                             <Button variant="primary"
