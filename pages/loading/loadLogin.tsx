@@ -21,12 +21,14 @@ const LoadLogin = () => {
     const [bad, setBad] = useState(true);
 
     useEffect(() => {
-        if(!token){
-            console.log(token);
-            // router.push("/login");
-        }else{
+        if(token === null){
+            router.push("/login");
+            // console.log("token1");
+        }
+
+        if(token!==undefined && token!==null){
             setLoad(false);
-            console.log(token);
+            // console.log("token2");
         }
         // axios.get('/api/login_api')
         // .then((res) => {
