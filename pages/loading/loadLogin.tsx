@@ -91,7 +91,7 @@ const LoadLogin = () => {
             return;
         }
         
-        // console.log(res.data.sub)
+        console.log(token?.sub)
         if(token?.sub === undefined){
             router.push("/login");
         }else{
