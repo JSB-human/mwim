@@ -4,9 +4,21 @@ import 'tailwindcss/tailwind.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { SessionProvider } from 'next-auth/react';
 import { DefaultSeo } from 'next-seo';
-
+import { useRouter } from 'next/router';
+import { useEffect } from 'react';
+import * as gtag from './lib/gtags';
 
 function MyApp({ Component, pageProps }: AppProps) {
+  const router = useRouter();
+  useEffect(() => {
+    const handleRouteChange = (url: any) => {
+      gtag.pageview(url)
+    }
+    router.events.on('routeChangeComplete', handleRouteChange)
+    return () => {
+      router.events.off('routeChangeComplete', handleRouteChange)
+    }
+  }, [router.events])
 
   return (
     <SessionProvider session={pageProps.session}>
