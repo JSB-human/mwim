@@ -72,11 +72,11 @@ const Register = () => {
                 axios.get("/spring/account/sendMail", {params})
                 .then((res)=>{
                     setCodeSendLoading(false);
-                    if(res.data === "전송"){
+                    if(res.data === "send"){
                         setCodeStatus('인증번호가 발송되었습니다.');
                         setAlreadySend(true);
                         setCodeDisable(false);
-                    }else if(res.data === "실패"){
+                    }else if(res.data === "fail"){
                         setCodeStatus('인증번호를 보내는 중 오류가 발생했습니다. 다시 시도해주세요.');
                         setCodeDisable(true);
                     }
