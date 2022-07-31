@@ -7,6 +7,7 @@ import {AiFillCheckCircle} from "react-icons/ai";
 import {ImCancelCircle} from "react-icons/im";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { useDimensions } from "@nivo/core";
 
 
 const Register = () => {
@@ -32,6 +33,10 @@ const Register = () => {
     const [nicknameGood, setNicknameGood] = useState(false);
     const [sendBtnDisable, setsendBtnDisable] = useState(true);
     const [codeInputDisable, setCodeInputDisable] = useState(true);
+
+    const [uid, setUid] = useState('');
+    const [uidLabel, setUidLabel] = useState('');
+    const [uidGood, setUidGood] = useState(false);
 
     const [registerBtnActivate, setRegisterBtnActivate] = useState(false);
 
@@ -138,6 +143,23 @@ const Register = () => {
         }
     }
 
+    const checkUid = () => {
+        if(uid === ""){
+            setUidGood(false);
+            setUidLabel("아이디를 정해주세요.");
+        }
+        axios.get('/spring/account/getUid/'+uid)
+        .then((res) => {
+            if(res.data !== ""){
+                setUidLabel("이미 사용중인 아이디입니다.");
+                setUidGood(false);
+            }else{
+                setUidLabel("사용가능한 아이디입니다.");
+                setUidGood(true);
+            }
+        })
+    }
+
     const checkNickname = () => {
         if(nickname === ""){
             setNicknameGood(false);
@@ -162,6 +184,7 @@ const Register = () => {
             email : email, 
             pwd : password,
             social : 'email',
+            uid : uid,
             nickname : nickname
         })
         .then((res) => {
@@ -266,6 +289,20 @@ const Register = () => {
                     onBlur={checkPassword2}
                     value={password2}
                     onChange={(e)=>{setPassword2(e.target.value)}}
+                />
+                <label htmlFor="uid" className="text-gray-700 text-xl mt-2">아이디</label>
+                {
+                    uidGood ?
+                    <span className="ml-2 text-green-600 text-sm inline-flex">{uidLabel}<AiFillCheckCircle className="mt-1 ml-1"></AiFillCheckCircle></span>
+                    :
+                    <span className="ml-2 text-red-500 text-sm">{uidLabel}</span>
+
+                }
+                <input type="text" id="uid"
+                    className="w-full border border-black h-16 p-2 text-xl"
+                    onBlur={checkUid}
+                    value={uid}
+                    onChange={(e)=>{setUid(e.target.value)}}
                 />
                 <label htmlFor="nickname" className="text-gray-700 text-xl mt-2">닉네임</label>
                 {
