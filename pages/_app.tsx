@@ -6,7 +6,7 @@ import { SessionProvider } from 'next-auth/react';
 import { DefaultSeo } from 'next-seo';
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';
-import * as gtag from './lib/gtags';
+import * as gtag from '../lib/gtags';
 
 function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter();
