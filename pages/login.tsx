@@ -109,19 +109,19 @@ const Login = ({ Component, pageProps }: AppProps) => {
                             onClick={()=>signIn('kakao')} >
                             {/* <Image src={"/kakao_login_large_wide.png"} layout="fill" objectFit="contain" alt="이미지"/> */}
                             <RiKakaoTalkFill className="inline text-[25px]"></RiKakaoTalkFill>
-                            <span className="text-[16px] ml-3 text-gray-600 font-bold">Kakaotalk 로그인</span>
+                            <span className="text-[16px] ml-3 text-gray-600 font-bold select-none">Kakaotalk 로그인</span>
                         </div>
 
                         <div className="border border-black mt-1 hover:cursor-pointer hover:bg-gray-200" 
                             onClick={()=>signIn('facebook')}>
                             <AiFillFacebook color="#0165E1" className="inline text-[30px]"></AiFillFacebook>
-                            <span className="text-[16px] ml-3 text-gray-600 font-bold">Facebook 로그인</span>
+                            <span className="text-[16px] ml-3 text-gray-600 font-bold select-none">Facebook 로그인</span>
                         </div>
 
                         <div className="border border-black mt-1 hover:cursor-pointer hover:bg-gray-200" 
                             onClick={()=>signIn('naver')}>
                             <SiNaver color="#2DB400" className="inline text-[25px]"></SiNaver>
-                            <span className="text-[16px] ml-3 text-gray-600 font-bold">Naver 로그인</span>
+                            <span className="text-[16px] ml-3 text-gray-600 font-bold select-none">Naver 로그인</span>
                         </div>
 
                        
