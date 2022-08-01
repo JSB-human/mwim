@@ -19,14 +19,25 @@ const Vote = () => {
     const [voteNo, setVoteNo] = useState(0);
     const [dis, setDis] = useState(true);
 
+    const vote_no = router.query.vote || "0";
+
     useEffect(() => {
-        axios.get('/spring/vote/view/rand')
-        .then((res)=> {
-            // console.log(res);
-            setTitle(res.data.title);
-            setVote(JSON.parse(res.data.vote));
-            setVoteNo(res.data.vote_no);
-        })
+        if(vote_no === "0"){
+            axios.get('/spring/vote/view/rand')
+            .then((res)=> {
+                // console.log(res);
+                setTitle(res.data.title);
+                setVote(JSON.parse(res.data.vote));
+                setVoteNo(res.data.vote_no);
+            })
+        }else{
+            axios.get(`/spring/vote/view/no/${vote_no}`)
+            .then((res) => {
+                setTitle(res.data.title);
+                setVote(JSON.parse(res.data.vote));
+                setVoteNo(res.data.vote_no);
+            })
+        }
     },[title])
 
     const checkRadio = (e : ChangeEvent<HTMLInputElement>) => {
@@ -94,7 +105,9 @@ const Vote = () => {
                         newgame ={true}
                         url={"/play/vote/makevote"} 
                         btnTitle={"새 투표 만들기"} 
-                        title={`투표 - ${title}`}></ShareBtns>
+                        title={`투표 - ${title}`}
+                        urlString={`/play/vote/${voteNo}`}
+                        ></ShareBtns>
                 </div>
             </div>
             <Footer></Footer>

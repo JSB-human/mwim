@@ -15,6 +15,7 @@ const Joke = () => {
 
     const [title, setTitle] = useState('');
     const [subject, setSubject] = useState('');
+    const [jokeNo, setJokNo] = useState(0);
 
     const [check, setCheck] = useState(false);
 
@@ -26,12 +27,14 @@ const Joke = () => {
             .then((res) => {
                 setTitle(res.data.title);
                 setSubject(res.data.subject);
+                setJokNo(res.data.joke_no);
             })
         }else{
             axios.get(`/spring/joke/get/${joke_no}`)
             .then((res) => {
                 setTitle(res.data.title);
                 setSubject(res.data.subject);
+                setJokNo(res.data.joke_no);
             })
         }
     },[joke_no])
@@ -79,7 +82,9 @@ const Joke = () => {
                         newgame ={true}
                         url={"/play/joke/makejoke"} 
                         btnTitle={"새 유머 만들기"} 
-                        title={`유머 - ${title}`}></ShareBtns>
+                        title={`유머 - ${title}`}
+                        urlString={`/play/joke/${jokeNo}`}
+                        ></ShareBtns>
                     {/* <GameReply gameType={3}></GameReply> */}
                 </div>
             </div>

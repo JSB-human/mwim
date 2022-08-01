@@ -159,7 +159,9 @@ const Guess = () => {
                             newgame ={false}
                             url={""} 
                             btnTitle={""} 
-                            title={`책 가격 맞추기`}></ShareBtns>
+                            title={`책 가격 맞추기`}
+                            urlString={`/play/guess_book/book`}
+                            ></ShareBtns>
                     </div>
                 </div>
                 :
@@ -232,7 +234,9 @@ const Guess = () => {
                             newgame ={false}
                             url={""} 
                             btnTitle={""} 
-                            title={`책 가격 맞추기`}></ShareBtns>
+                            title={`책 가격 맞추기`}
+                            urlString={`/play/guess_book/book`}
+                            ></ShareBtns>
                     </div>
                 </div>
             }

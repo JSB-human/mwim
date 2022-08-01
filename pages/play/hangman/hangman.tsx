@@ -209,7 +209,9 @@ const HangMan = () => {
                         newgame ={false}
                         url={""} 
                         btnTitle={""} 
-                        title={`행맨 게임`}></ShareBtns>
+                        title={`행맨 게임`}
+                        urlString={`/play/hangman/hangman`}
+                        ></ShareBtns>
                 </div>
             </div>
             <Footer></Footer>

@@ -5,11 +5,12 @@ import Post from "./post";
 import Share from "./share";
 
 
-const ShareBtns = (props : {newgame : boolean ,url : string , btnTitle : string , title : string}) => {
+const ShareBtns = (props : {newgame : boolean ,url : string , btnTitle : string , title : string, urlString : string}) => {
     const url = props.url;
     const btnTitle = props.btnTitle;
     const title = props.title;
     const newgame = props.newgame;
+    const urlString = props.urlString;
 
     return (
         <div className="text-right mt-2">
@@ -25,7 +26,7 @@ const ShareBtns = (props : {newgame : boolean ,url : string , btnTitle : string 
                     <></>
                 }
                     <Share></Share>
-                    <Post title={title}></Post>
+                    <Post title={title} urlString={urlString}></Post>
             </ButtonGroup>
         </div>
     )

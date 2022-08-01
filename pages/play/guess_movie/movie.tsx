@@ -108,7 +108,9 @@ const Guess_Movie = () => {
                     newgame ={false}
                     url={""} 
                     btnTitle={""} 
-                    title={`영화 제목 맞추기`}></ShareBtns>
+                    title={`영화 제목 맞추기`}
+                    urlString={`/play/guess_movie/movie`}
+                    ></ShareBtns>
               </div>
              </div>
             </div>

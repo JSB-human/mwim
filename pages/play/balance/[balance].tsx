@@ -110,7 +110,9 @@ const Balance = () => {
                         newgame ={true}
                         url={"/play/balance/makebalance"} 
                         btnTitle={"새 게임 만들기"} 
-                        title={`밸런스게임 - ${left} vs ${right}`}></ShareBtns>
+                        title={`밸런스게임 - ${left} vs ${right}`}
+                        urlString={`/play/balance/${gameNo}`}
+                        ></ShareBtns>
 
                 </div>
             </div>

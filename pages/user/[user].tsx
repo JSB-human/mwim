@@ -98,7 +98,7 @@ const UserPage = () => {
                                         <p>{moment(val.write_time).format('M월 DD일 h:mm')}</p>
                                     </div>
                                     <div className="rounded-lg bg-gray-100 p-2">
-                                        <LinkPreview url={'https://naver.com'} width={'full'} />
+                                        <LinkPreview url={val.url} width={'full'} />
                                         <h5>{
                                                 val.title
                                             }

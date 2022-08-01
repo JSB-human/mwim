@@ -251,7 +251,9 @@ const GuessCoin = () => {
                             newgame ={false}
                             url={""} 
                             btnTitle={""} 
-                            title={`코인 가격 맞추기`}></ShareBtns>
+                            title={`코인 가격 맞추기`}
+                            urlString={"/play/coin/guessCoin"}
+                            ></ShareBtns>
                     </div>
                 </div>
             <Footer></Footer>

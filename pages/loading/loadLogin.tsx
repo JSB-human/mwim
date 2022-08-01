@@ -30,7 +30,15 @@ const LoadLogin = () => {
                 if(res.data.sub === undefined){
                     router.push("/login");
                 }else{
-                    setLoad(false);
+                    axios.get(`/spring/account/select/${res.data.sub}`)
+                    .then((res) => {
+                        if(res.data !== ''){
+                            router.push("/main");
+                        }else{
+                            setLoad(false);
+                        }
+                    })
+
                 }
             })
         }

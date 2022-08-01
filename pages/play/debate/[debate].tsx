@@ -112,7 +112,9 @@ const Debate = () => {
                         newgame ={true}
                         url={"/play/vote/makevote"} 
                         btnTitle={"새 토론 만들기"} 
-                        title={`토론 - ${title}`}></ShareBtns>
+                        title={`토론 - ${title}`}
+                        urlString={`/play/debate/${debate_no}`}
+                        ></ShareBtns>
                     <div className="grid grid-cols-1 mt-2 bg-white rounded-lg p-2">
                         <div className="font-bold border-b-2 border-black">
                             의견 추가

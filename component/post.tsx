@@ -6,14 +6,15 @@ import { AiFillLike } from 'react-icons/ai';
 
 
 
-const Post = (props : {title : string}) => {
+const Post = (props : {title : string, urlString : string}) => {
     const [show, setShow] = useState(false);
     const { data : token, status } = useSession();
 
-    let currentUrl : string = '';
-    if (typeof window !== "undefined") {
-        currentUrl = window.location.href;
-    }
+    let currentUrl = "https://mwim.vercel.app" + props.urlString;
+    // let currentUrl : string = '';
+    // if (typeof window !== "undefined") {
+    //     currentUrl = window.location.href;
+    // }
 
     const [comment, setComment] = useState('');
     const [accountId, setAccountId] = useState('');
