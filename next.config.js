@@ -14,7 +14,7 @@ const nextConfig = {
         },
         {
           source : "/naver_shop/:path*",
-          destination : process.env.NAVER_BOOK, 
+          destination : 'https://openapi.naver.com/v1/search/shop.json', 
         },
         {
           source : "/upbit_coin/:path*",
