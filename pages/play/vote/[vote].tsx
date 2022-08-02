@@ -38,7 +38,7 @@ const Vote = () => {
                 setVoteNo(res.data.vote_no);
             })
         }
-    },[title])
+    },[title, vote_no])
 
     const checkRadio = (e : ChangeEvent<HTMLInputElement>) => {
         setCheck(e.target.value);

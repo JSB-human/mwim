@@ -1,5 +1,6 @@
 import axios from "axios";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { Button, Table } from "react-bootstrap";
 import Footer from "../../../../component/footer";
@@ -11,8 +12,9 @@ interface debate {
 }
 
 const Debate_List = () => {
-
+    const router = useRouter();
     const [debateArr, setDebateArr] = useState<Array<debate>>([]);
+    const debate_list = router.query.debate_list || "0";
 
     useEffect(() => {
         axios.get('/spring/debate_list/1')
@@ -39,8 +41,8 @@ const Debate_List = () => {
                     {
                         debateArr.map((val, i) => {
                             return (
-                                <tr>
-                                    <td className="" key={i}>
+                                <tr key={i}>
+                                    <td className="">
                                         <Link href={`/play/debate/${val.debate_no}`}>
                                             <a className="text-black no-underline">
                                                 {val.title}
