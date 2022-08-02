@@ -41,15 +41,15 @@ const Debate_List = () => {
                     {
                         debateArr.map((val, i) => {
                             return (
-                                <tr key={i}>
-                                    <td className="">
-                                        <Link href={`/play/debate/${val.debate_no}`}>
-                                            <a className="text-black no-underline">
-                                                {val.title}
-                                            </a>
-                                        </Link>
-                                    </td>
-                                </tr>
+                                <Link href={`/play/debate/${val.debate_no}`}>
+                                    <tr key={i} className="cursor-pointer">
+                                        <td className="">
+                                                <a className="text-black no-underline">
+                                                    {val.title}
+                                                </a>
+                                        </td>
+                                    </tr>
+                                </Link>
                             )
                         })
                     }
