@@ -252,11 +252,11 @@ const Main = () => {
                         <Card>
                             <Card.Img variant="top" src="" />
                             <Card.Body>
-                                <Card.Title>책 가격 맞추기</Card.Title>
+                                <Card.Title>상품 최저가 맞추기</Card.Title>
                                 <Card.Text>
-                                    책 가격를 맞춰보세요
+                                    최저가를 맞춰보세요
                                 </Card.Text>
-                                <Link href="/play/guess_book/book">
+                                <Link href="/play/guess_price/price">
                                     <a> 
                                         <Button>
                                             <span className="flex">

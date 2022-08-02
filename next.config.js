@@ -13,7 +13,7 @@ const nextConfig = {
           destination : `https://api.themoviedb.org/3/movie/popular?api_key=${process.env.MOVIE_API_KEY}&language=ko&page=:page`
         },
         {
-          source : "/naver_book/:path*",
+          source : "/naver_shop/:path*",
           destination : process.env.NAVER_BOOK, 
         },
         {
@@ -28,7 +28,7 @@ const nextConfig = {
     
   },
   images : {
-    domains :['image.tmdb.org','bookthumb-phinf.pstatic.net'],
+    domains :['image.tmdb.org','bookthumb-phinf.pstatic.net','shopping-phinf.pstatic.net'],
   },
   env : {
     BASE_URL : process.env.BASE_URL

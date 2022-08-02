@@ -8,22 +8,22 @@ import {BsFillHeartFill} from 'react-icons/bs';
 import Footer from "../../../component/footer";
 import ShareBtns from "../../../component/shareBtns";
 
-interface Book {
-    author : string;
-    description : string;
-    discount : string;
+interface Shop {
+    title : string;
+    lprice : number;
+    hprice : number;
+    mallName : string;
     image : string;
     link : string;
-    price : string;
-    pubdate : string;
-    publisher : string;
-    title : string;
+    productType : number;
+    maker	: string;
+    brand : string;
 }
 
-const Guess = () => {
+const Price = () => {
     const [mode, setMode] = useState(1);
     const [queryTxt, setQueryTxt] = useState('');
-    const [bookArr, setBookArr] = useState<Array<Book>>([]);
+    const [ShopArr, setShopArr] = useState<Array<Shop>>([]);
     const [nowIndex, setNowIndex] = useState(0);
     const [nowDisplay, setNowDisplay] = useState(0);
     const [guessPrice, setGuessPrice] = useState('');
@@ -35,9 +35,9 @@ const Guess = () => {
     useEffect(() => {
         if(heart === 0){
             setFinish(true);
-            setStatusTxt(`실패! 값 : ${bookArr[nowIndex].price}원`);
+            setStatusTxt(`실패! 값 : ${ShopArr[nowIndex].lprice}원`);
         }
-    },[heart, bookArr, nowIndex])
+    },[heart, ShopArr, nowIndex])
 
     useEffect(() => {
         if(nowIndex === 0){
@@ -48,27 +48,29 @@ const Guess = () => {
         }
     }, [nowIndex, nowDisplay])
 
-    const queryBtn = () => {
+    const queryBtn = async () => {
         if(queryTxt === ''){
             return;
         }
+        const client_id = process.env.NEXT_PUBLIC_NAVER_ID;
+        const client_secret = process.env.NEXT_PUBLIC_NAVER_SECRET;
 
-        axios.get('/naver_book',{
+        await axios.get('/naver_shop',{
             params : {
                 query : queryTxt,
                 display : 100,
-                sort : 'count'
+                sort : 'sim'
             },
             headers : {
                 //@ts-ignore
-                'X-Naver-Client-Id' : process.env.NEXT_PUBLIC_NAVER_ID,
+                'X-Naver-Client-Id' : client_id,
                 //@ts-ignore
-                'X-Naver-Client-Secret' : process.env.NEXT_PUBLIC_NAVER_SECRET
+                'X-Naver-Client-Secret' : client_secret
             }
         })
         .then((res) => {
             // console.log(res);
-            setBookArr(res.data.items);
+            setShopArr(res.data.items);
             setMode(2);
             setNowIndex(0);
             setNowDisplay(res.data.display);
@@ -89,13 +91,13 @@ const Guess = () => {
         if(guessPrice === '' || isNaN(guessPrice)){
             return;
         }
-        if(parseInt(guessPrice) < parseInt(bookArr[nowIndex].price)){
+        if(parseInt(guessPrice) < ShopArr[nowIndex].lprice){
             setStatusTxt('업!');
             setHeart(heart - 1);
-        }else if(parseInt(guessPrice) === parseInt(bookArr[nowIndex].price)){
+        }else if(parseInt(guessPrice) === ShopArr[nowIndex].lprice){
             setStatusTxt('정답!');
             setFinish(true);
-        }else if(parseInt(guessPrice) > parseInt(bookArr[nowIndex].price)){
+        }else if(parseInt(guessPrice) > ShopArr[nowIndex].lprice){
             setStatusTxt('다운!');
             setHeart(heart - 1);
         }
@@ -129,7 +131,7 @@ const Guess = () => {
         setHeart(6);
         setFinish(false);
         setQueryTxt('');
-        setBookArr([]);
+        setShopArr([]);
         setGuessPrice('');
         setHideNext(false);
     }
@@ -142,12 +144,12 @@ const Guess = () => {
 
                 <div className="h-full min-h-screen bg-gray-100">
                     <div className="text-center text-2xl p-2">
-                        <b className=""> 책 가격 맞추기</b>
+                        <b className="">상품 가격 맞추기</b>
                     </div>
                     <div className="container bg-white rounded-lg p-4">
-                        맞출 책 키워드
+                        맞출 상품
                         <input className="w-full h-full text-2xl p-2 border border-black"
-                            placeholder="키워드 입력"
+                            placeholder="상품 입력"
                             value={queryTxt}
                             onChange={(e) => setQueryTxt(e.target.value)}
                         />
@@ -159,7 +161,7 @@ const Guess = () => {
                             newgame ={false}
                             url={""} 
                             btnTitle={""} 
-                            title={`책 가격 맞추기`}
+                            title={`상품 최저가 맞추기`}
                             urlString={`/play/guess_book/book`}
                             ></ShareBtns>
                     </div>
@@ -173,22 +175,22 @@ const Guess = () => {
                         <div className="flex">
                             <div className="w-1/5 text-center place-items-center">
                                 <Image
-                                    src={bookArr[nowIndex].image}
+                                    src={ShopArr[nowIndex].image}
                                     width={82}
                                     height={120}
                                     alt="이미지"
                                 />
                             </div>
                             <div className="w-4/5">
-                                    <span className="mb-7"><span className="text-gray-500">이름 : </span>{parse(bookArr[nowIndex].title)}</span><br/>
-                                    <span className="mb-7"><span className="text-gray-500">저자 : </span>{parse(bookArr[nowIndex].author)}</span><br/>
-                                    <span className="mb-7"><span className="text-gray-500">출간일 : </span>{dateFormat(bookArr[nowIndex].pubdate)}</span><br/>
-                                    <span className="mb-7"><span className="text-gray-500">출판사 : </span>{parse(bookArr[nowIndex].publisher)}</span><br/>
+                                    <span className="mb-7"><span className="text-gray-500">상품명 : </span>{parse(ShopArr[nowIndex].title)}</span><br/>
+                                    <span className="mb-7"><span className="text-gray-500">쇼핑몰 : </span>{parse(ShopArr[nowIndex].mallName)}</span><br/>
+                                    <span className="mb-7"><span className="text-gray-500">제조사 : </span>{parse(ShopArr[nowIndex].maker)}</span><br/>
+                                    <span className="mb-7"><span className="text-gray-500">브랜드 : </span>{parse(ShopArr[nowIndex].brand)}</span><br/>
                             </div>
                         </div>
-                       <span>
-                            {parse(bookArr[nowIndex].description)}
-                       </span>
+                       {/* <span>
+                            {'어쩌구'}
+                       </span> */}
                     </div>
                     <div className="container bg-white rounded-lg p-4 mt-2">
                         <div className="flex justify-center">
@@ -249,4 +251,4 @@ const Guess = () => {
 }
 
 
-export default Guess;
+export default Price;
