@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { Button, Spinner } from "react-bootstrap";
+import address from "../api/address";
 import login_api from "../api/login_api";
 
 const LoadLogin = () => {
@@ -21,6 +22,7 @@ const LoadLogin = () => {
     const [bad, setBad] = useState(true);
 
     useEffect(() => {
+        address();
         if(token === null){
             router.push("/login");
         }

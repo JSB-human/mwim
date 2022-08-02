@@ -1,0 +1,64 @@
+import axios from "axios";
+import Link from "next/link";
+import { useEffect, useState } from "react";
+import { Button, Table } from "react-bootstrap";
+import Footer from "../../../../component/footer";
+import NavBar from "../../../../component/navBar";
+
+interface debate {
+    title : string;
+    debate_no : number;
+}
+
+const Debate_List = () => {
+
+    const [debateArr, setDebateArr] = useState<Array<debate>>([]);
+
+    useEffect(() => {
+        axios.get('/spring/debate_list/1')
+        .then((res) => {
+            setDebateArr(res.data);
+        })
+    }, [])
+
+    return (
+        <>
+            <NavBar/>
+            <div className="h-full min-h-screen bg-gray-100">
+                <div className="container p-2">
+                    <div className="text-center text-2xl p-2">
+                        <b className="">토론</b>
+                    </div>
+                    <Table striped bordered hover variant="light">
+                        <thead>
+                            <tr>
+                                <th>제목</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                    {
+                        debateArr.map((val, i) => {
+                            return (
+                                <tr>
+                                    <td className="" key={i}>
+                                        <Link href={`/play/debate/${val.debate_no}`}>
+                                            <a className="text-black no-underline">
+                                                {val.title}
+                                            </a>
+                                        </Link>
+                                    </td>
+                                </tr>
+                            )
+                        })
+                    }
+                        </tbody>
+                    </Table>
+                </div>
+            </div>
+            <Footer/>
+        </>
+    )
+
+}
+
+export default Debate_List;

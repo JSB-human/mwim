@@ -5,6 +5,7 @@ import React, { useState } from "react";
 import { Button } from "react-bootstrap";
 import Footer from "../../../component/footer";
 import NavBar from "../../../component/navBar";
+import address from "../../api/address";
 
 
 const MakeDebate = () => {
@@ -31,6 +32,7 @@ const MakeDebate = () => {
             opinion2 : opinion2
         })
         .then(() => {
+            address();
             router.push('/play/debate/0');
         })
     }

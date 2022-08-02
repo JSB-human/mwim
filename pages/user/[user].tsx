@@ -51,7 +51,6 @@ const UserPage = () => {
 
             axios.get(`/spring/world/get/${userId}`)
             .then((res) => {
-                console.log(res);
                 setWorlds(res.data);
                 if(res.data.length > 0){
                     setWorldExist(1);

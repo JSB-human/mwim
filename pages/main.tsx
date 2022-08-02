@@ -193,7 +193,7 @@ const Main = () => {
                                         </Button>
                                     </a>
                                 </Link>
-                                {/* <Link href="#">
+                                <Link href="/play/debate/list/1">
                                     <a>
                                         <Button variant="danger">
                                             <span className="flex">
@@ -202,7 +202,7 @@ const Main = () => {
                                             </span>
                                         </Button>
                                     </a>
-                                </Link> */}
+                                </Link>
                             </Card.Body>
                         </Card>
                     </div>

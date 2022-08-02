@@ -237,7 +237,7 @@ const Price = () => {
                             url={""} 
                             btnTitle={""} 
                             title={`책 가격 맞추기`}
-                            urlString={`/play/guess_book/book`}
+                            urlString={`/play/guess_price/price`}
                             ></ShareBtns>
                     </div>
                 </div>

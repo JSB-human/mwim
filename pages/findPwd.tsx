@@ -7,6 +7,7 @@ import {AiFillCheckCircle} from "react-icons/ai";
 import {ImCancelCircle} from "react-icons/im";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import address from "./api/address";
 
 
 const Register = () => {
@@ -150,6 +151,7 @@ const Register = () => {
                     pwd : pwd
                 })
                 .then((res) => {
+                    address();
                     if(res.data === 1){
                         router.push('/login');
                     }

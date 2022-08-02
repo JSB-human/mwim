@@ -8,6 +8,7 @@ import { ChangeEvent, ChangeEventHandler, useEffect, useState } from "react";
 import { Button } from "react-bootstrap";
 import Footer from "../../../component/footer";
 import NavBar from "../../../component/navBar";
+import address from "../../api/address";
 
 const MakeJoke = () => {
     const router = useRouter();
@@ -30,6 +31,7 @@ const MakeJoke = () => {
                 maker : sub.data.sub
             })
             .then(() => {
+                address();
                 router.push("/main");
             })
         } catch (error) {

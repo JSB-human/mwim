@@ -11,6 +11,7 @@ import moment from "moment";
 import Share from "../../../component/share";
 import Post from "../../../component/post";
 import ShareBtns from "../../../component/shareBtns";
+import address from "../../api/address";
 
 const Debate = () => {
     const router = useRouter();
@@ -56,6 +57,7 @@ const Debate = () => {
             .catch((err) => {
                 // console.error(err);
             })
+
         })
     },[debate_no])
 
@@ -68,9 +70,10 @@ const Debate = () => {
             opinion_txt : opinion_txt,
             opinion_like : opinion_like,
             maker : sub.data.sub,
-            nickname : nickname
+            nickname : nickname,
         })
         .then(() => {
+            address();
             setNickname('');
             setOpinion_txt('');
         })

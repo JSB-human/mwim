@@ -23,6 +23,10 @@ const nextConfig = {
         {
           source : "/random_words",
           destination : "https://random-word-api.herokuapp.com/word"
+        },
+        {
+          source : "/location",
+          destination : "https://geolocation-db.com/json/"
         }
       ]
     

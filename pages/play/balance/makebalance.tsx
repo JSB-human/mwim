@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import { Button } from "react-bootstrap";
 import Footer from "../../../component/footer";
 import NavBar from "../../../component/navBar";
+import address from "../../api/address";
 
 
 const MakeBalance = () => {
@@ -28,6 +29,7 @@ const MakeBalance = () => {
                 title2 : right
             })
             .then((res) => {
+                address();
                 router.push('/play/balance/0');
             })
         } catch (error) {

@@ -155,14 +155,14 @@ const MyPage = () => {
                                 닉네임 변경
                             </div>
                             {
-                                social === 'social' ?
-                                <></>
-                                :
+                                social === 'email' ?
                                 <div className="text-white font-bold p-2 mt-4 rounded-lg bg-blue-500 shadow-lg shadow-blue-500/50 hover:bg-black hover:cursor-pointer"
                                     onClick={() => setMode('password')}
                                 >
                                     비밀번호 변경
                                 </div>
+                                :
+                                <></>
                             }
                            
                             <div className="text-white font-bold p-2 mt-4 rounded-lg bg-indigo-500 shadow-lg shadow-indigo-500/50 hover:bg-black hover:cursor-pointer"

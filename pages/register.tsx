@@ -8,6 +8,7 @@ import {ImCancelCircle} from "react-icons/im";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useDimensions } from "@nivo/core";
+import address from "./api/address";
 
 
 const Register = () => {
@@ -188,6 +189,7 @@ const Register = () => {
             nickname : nickname
         })
         .then((res) => {
+            address();
             if(res.data === 1){
                 router.push('/login');
             }

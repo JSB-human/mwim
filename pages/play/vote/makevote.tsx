@@ -4,6 +4,7 @@ import React, { HTMLInputTypeAttribute, ReactElement, useState } from "react";
 import { Button } from "react-bootstrap";
 import Footer from "../../../component/footer";
 import NavBar from "../../../component/navBar";
+import address from "../../api/address";
 
 
 const MakeVote = () => {
@@ -58,6 +59,7 @@ const MakeVote = () => {
                 }
             )
             .then((res) => {
+                address();
                 Router.push('/play/vote/0');
             })
         } catch (error) {
