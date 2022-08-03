@@ -41,7 +41,7 @@ const Debate_List = () => {
                     {
                         debateArr.map((val, i) => {
                             return (
-                                <Link href={`/play/debate/${val.debate_no}`} key={i}>
+                                <Link href={`/play/debate/${val.debate_no}`} key={i} passHref>
                                     <tr className="cursor-pointer">
                                         <td className="">
                                                 <a className="text-black no-underline">

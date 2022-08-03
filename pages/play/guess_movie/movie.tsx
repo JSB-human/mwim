@@ -61,14 +61,13 @@ const Guess_Movie = () => {
              <div className="container">
               <div className="text-2xl">
                 <b>영화 제목 맞추기</b>
-                <div className="pt-3">
+                <div className="">
                     {
                         randuri === '' ?
                         <Spinner animation="border" />
                         :
                         <LazyLoadImage src={`https://image.tmdb.org/t/p/original/${randuri}`} 
-                            width={800}
-                            height={500}
+                            className="scale-100"
                             alt="이미지"
                             effect="blur"
                         />
@@ -86,14 +85,13 @@ const Guess_Movie = () => {
                         <div className="pt-2 text-xl">
                         {title}
                         </div>
-                        <div className="pt-2">
+                        <div className="flex items-center justify-center">
                             {
                                 posterUri==='' ? 
                                 <Spinner animation="border" />
                                 :
                                 <LazyLoadImage src={`https://image.tmdb.org/t/p/original/${posterUri}`} 
-                                    width={800}
-                                    height={1200}
+                                    className="scale-90"
                                     alt = "이미지"
                                     effect="blur"
                                 />
