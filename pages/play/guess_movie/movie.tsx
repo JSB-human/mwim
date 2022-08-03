@@ -9,6 +9,8 @@ import Footer from "../../../component/footer";
 import axios from "axios";
 import Image from "next/image";
 import ShareBtns from "../../../component/shareBtns";
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import 'react-lazy-load-image-component/src/effects/blur.css';
 
 const Guess_Movie = () => {
     const router = useRouter();
@@ -45,6 +47,7 @@ const Guess_Movie = () => {
 
     const UpdateNo = () => {
         setRanduri('');
+        setPosterUri('');
         setCheck(false);
         setUpdateNo(updateNo + 1);
     }
@@ -63,10 +66,11 @@ const Guess_Movie = () => {
                         randuri === '' ?
                         <Spinner animation="border" />
                         :
-                        <Image src={`https://image.tmdb.org/t/p/original/${randuri}`} 
+                        <LazyLoadImage src={`https://image.tmdb.org/t/p/original/${randuri}`} 
                             width={800}
                             height={500}
                             alt="이미지"
+                            effect="blur"
                         />
                     }
                     
@@ -83,11 +87,17 @@ const Guess_Movie = () => {
                         {title}
                         </div>
                         <div className="pt-2">
-                            <Image src={`https://image.tmdb.org/t/p/original/${posterUri}`} 
-                                width={800}
-                                height={1200}
-                                alt = "이미지"
-                            />
+                            {
+                                posterUri==='' ? 
+                                <Spinner animation="border" />
+                                :
+                                <LazyLoadImage src={`https://image.tmdb.org/t/p/original/${posterUri}`} 
+                                    width={800}
+                                    height={1200}
+                                    alt = "이미지"
+                                    effect="blur"
+                                />
+                            }
                         </div>
                         <div>
                             첫 개봉 : {release_date}
