@@ -31,6 +31,10 @@ const nextConfig = {
         {
           source : "/youtube_api/:region",
           destination : `https://www.googleapis.com/youtube/v3/videos?part=snippet&chart=mostPopular&regionCode=:region&videoCategoryId=10&maxResults=30&key=${process.env.YOUTUBE_API_KEY}`
+        },
+        {
+          source : "/youtube_top/:playlist",
+          destination : `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=:playlist&maxResults=50&key=${process.env.YOUTUBE_API_KEY}`
         }
       ]
     
