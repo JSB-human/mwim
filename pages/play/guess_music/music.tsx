@@ -63,6 +63,7 @@ const Music = () => {
     }
 
     const DDBtn = (title:string, rg:string) => {
+        setShowBtn('hidden');
         setRegionTxt(title);
         setRegion(rg);
     }
