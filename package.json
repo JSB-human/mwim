@@ -64,6 +64,10 @@
     },
     "/location": {
       "target": "https://geolocation-db.com/json/"
+    },
+    "/youtube" : {
+      "target": "https://www.googleapis.com/"
     }
+
   }
 }

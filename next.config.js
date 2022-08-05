@@ -27,6 +27,10 @@ const nextConfig = {
         {
           source : "/location",
           destination : "https://geolocation-db.com/json/"
+        },
+        {
+          source : "/youtube_api/:region",
+          destination : `https://www.googleapis.com/youtube/v3/videos?part=snippet&chart=mostPopular&regionCode=:region&videoCategoryId=10&maxResults=30&key=${process.env.YOUTUBE_API_KEY}`
         }
       ]
     

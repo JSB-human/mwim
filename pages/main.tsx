@@ -269,6 +269,27 @@ const Main = () => {
                             </Card.Body>
                         </Card>
                     </div>
+                    <div >
+                        <Card>
+                            <Card.Img variant="top" src="" />
+                            <Card.Body>
+                                <Card.Title>음악 맞추기</Card.Title>
+                                <Card.Text>
+                                    전주를 듣고 음악을 맞춰보세요.
+                                </Card.Text>
+                                <Link href="/play/guess_music/music">
+                                    <a> 
+                                        <Button>
+                                            <span className="flex">
+                                                <BsFillPlayFill size={22}/>
+                                                플레이
+                                            </span>
+                                        </Button>
+                                    </a>
+                                </Link>
+                            </Card.Body>
+                        </Card>
+                    </div>
                 </div>
                 
             </div>

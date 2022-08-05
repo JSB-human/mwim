@@ -104,16 +104,16 @@ const HangMan = () => {
         ctx.stroke();
 
         ctx.font = '20px serif';
-        ctx.fillText('틀린 알파벳', 180, 20);
-        ctx.fillText(wrongTxt[0], 200, 50);
-        ctx.fillText(wrongTxt[1], 220, 50);
-        ctx.fillText(wrongTxt[2], 240, 50);
-        ctx.fillText(wrongTxt[3], 260, 50);
-        ctx.fillText(wrongTxt[4], 200, 80);
-        ctx.fillText(wrongTxt[5], 220, 80);
-        ctx.fillText(wrongTxt[6], 240, 80);
-        ctx.fillText(wrongTxt[7], 260, 80);
-        ctx.fillText(wrongTxt[8], 200, 110);
+        ctx.fillText('틀린 알파벳', 10, 280);
+        ctx.fillText(wrongTxt[0], 10, 320);
+        ctx.fillText(wrongTxt[1], 30, 320);
+        ctx.fillText(wrongTxt[2], 50, 320);
+        ctx.fillText(wrongTxt[3], 70, 320);
+        ctx.fillText(wrongTxt[4], 90, 320);
+        ctx.fillText(wrongTxt[5], 110, 320);
+        ctx.fillText(wrongTxt[6], 130, 320);
+        ctx.fillText(wrongTxt[7], 150, 320);
+        ctx.fillText(wrongTxt[8], 170, 320);
 
         if(chance === 9){
             alert('패배 (답 : ' + answer +')');
@@ -169,8 +169,8 @@ const HangMan = () => {
                     <div className="text-center text-3xl">
                         <b className="">행맨</b>
                     </div>
-                    <div className="mt-3 border border-black h-72 rounded-lg p-4 bg-white">
-                        <canvas ref={canvas} className="h-full"></canvas>
+                    <div className="mt-3 border border-black h-96 rounded-lg p-4 bg-white w-full">
+                        <canvas ref={canvas} className="h-full w-full"></canvas>
                     </div>
                     <div className="mt-2 border border-black h-15 rounded-lg p-4 bg-white">
                         {
