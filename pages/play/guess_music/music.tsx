@@ -27,11 +27,10 @@ const Music = () => {
     useEffect(() => {
         axios.get(`/youtube_api/${region}`)
         .then((res) => {
-            console.log(res.data.items)
             setIdArr(res.data.items);
         })
         .catch((err) => {
-            console.log(err);
+            // console.log(err);
         })
     },[region])
 
