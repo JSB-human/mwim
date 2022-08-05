@@ -6,6 +6,7 @@ import { BsFillPlayFill } from "react-icons/bs";
 import YouTube, { YouTubeEvent, YouTubeProps } from "react-youtube";
 import Footer from "../../../component/footer";
 import NavBar from "../../../component/navBar";
+import ShareBtns from "../../../component/shareBtns";
 
 interface youtube_json {
     id : string;
@@ -156,6 +157,15 @@ const Music = () => {
                     <Button variant="dark" className="w-full mt-4"
                         onClick={nextMusic}
                     >다음 곡</Button>
+                </div>
+                <div className="text-right">
+                    <ShareBtns
+                        newgame ={false}
+                        url={""} 
+                        btnTitle={""} 
+                        title={`음악 맞추기`}
+                        urlString={`/play/guess_music/music`}
+                    ></ShareBtns>
                 </div>
             </div>
 
