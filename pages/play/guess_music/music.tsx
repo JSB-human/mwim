@@ -31,7 +31,6 @@ const Music = () => {
     useEffect(() => {
         axios.get(`/youtube_top/${region}`)
         .then((res) => {
-            console.log(res);
             setIdArr(res.data.items);
         })
         .catch((err) => {
@@ -147,26 +146,28 @@ const Music = () => {
                         idArr.length === 0 ?
                         <></>
                         :
-                        <YouTube 
-                            videoId={idArr[cnt].snippet.resourceId.videoId}
-                            onReady={onReady}
-                            opts={opts}
-                            onStateChange={onStateChange}
-                        />
+                        <div>
+                            <YouTube 
+                                videoId={idArr[cnt].snippet.resourceId.videoId}
+                                onReady={onReady}
+                                opts={opts}
+                                onStateChange={onStateChange}
+                            />
+                            <h4>{idArr[cnt].snippet.title}</h4>
+                        </div>
                     }
                     <Button variant="dark" className="w-full mt-4"
                         onClick={nextMusic}
                     >다음 곡</Button>
                 </div>
-                <div className="text-right">
-                    <ShareBtns
-                        newgame ={false}
-                        url={""} 
-                        btnTitle={""} 
-                        title={`음악 맞추기`}
-                        urlString={`/play/guess_music/music`}
-                    ></ShareBtns>
-                </div>
+                <ShareBtns
+                    newgame ={false}
+                    url={""} 
+                    btnTitle={""} 
+                    title={`음악 맞추기`}
+                    urlString={`/play/guess_music/music`}
+                ></ShareBtns>
+                
             </div>
 
         </div>
