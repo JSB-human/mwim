@@ -24,10 +24,6 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   return (
     <SSRProvider>
-       <Script
-        src={`//dapi.kakao.com/v2/maps/sdk.js?appkey=${process.env.NEXT_PUBLIC_KAKAO_MAP_KEY}&libraries=services,clusterer&autoload=false`}
-        strategy="beforeInteractive"
-      />
       <SessionProvider session={pageProps.session}>
         <DefaultSeo
           title = "내가 만든 세상"
