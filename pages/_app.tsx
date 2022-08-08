@@ -23,6 +23,11 @@ function MyApp({ Component, pageProps }: AppProps) {
   }, [router.events])
 
   return (
+    <>
+    <Script
+      src={`//dapi.kakao.com/v2/maps/sdk.js?appkey=${process.env.NEXT_PUBLIC_KAKAO_MAP_KEY}&libraries=services,clusterer&autoload=false`}
+      strategy="beforeInteractive"
+    />
     <SSRProvider>
       <SessionProvider session={pageProps.session}>
         <DefaultSeo
@@ -62,7 +67,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <Component {...pageProps} />
       </SessionProvider>
     </SSRProvider>
-  
+    </>
   )
 }
 
