@@ -290,6 +290,27 @@ const Main = () => {
                             </Card.Body>
                         </Card>
                     </div>
+                    <div >
+                        <Card>
+                            <Card.Img variant="top" src="" />
+                            <Card.Body>
+                                <Card.Title>메뉴 정하기</Card.Title>
+                                <Card.Text>
+                                    오늘은 뭐 먹지...
+                                </Card.Text>
+                                <Link href="/play/pick_menu/meal">
+                                    <a> 
+                                        <Button>
+                                            <span className="flex">
+                                                <BsFillPlayFill size={22}/>
+                                                플레이
+                                            </span>
+                                        </Button>
+                                    </a>
+                                </Link>
+                            </Card.Body>
+                        </Card>
+                    </div>
                 </div>
                 
             </div>

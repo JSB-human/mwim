@@ -8,6 +8,7 @@ import { useRouter } from 'next/router';
 import { useEffect } from 'react';
 import * as gtag from '../lib/gtags';
 import { SSRProvider } from '@react-aria/ssr';
+import Script from 'next/script';
 
 function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter();
@@ -23,6 +24,10 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   return (
     <SSRProvider>
+       <Script
+        src={`//dapi.kakao.com/v2/maps/sdk.js?appkey=${process.env.NEXT_PUBLIC_KAKAO_MAP_KEY}&libraries=services,clusterer&autoload=false`}
+        strategy="beforeInteractive"
+      />
       <SessionProvider session={pageProps.session}>
         <DefaultSeo
           title = "내가 만든 세상"
