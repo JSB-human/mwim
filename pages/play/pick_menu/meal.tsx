@@ -109,37 +109,10 @@ const Meal = () => {
             case 'male' :
                 return (
                     <div className="text-left space-y-4 font-bold">
-                        <h3>당신은 상남자인가요?</h3>
+                        <h3>아래 음식 중 땡기는 음식이 있나요?</h3>
                         <Form.Check
                             type={'radio'}
                             name="male"
-                            label="예"
-                            id='male1'
-                            value={'male1'}
-                            checked={choose === 'male1'}
-                            onChange={(e)=>onChange(e, 0)}
-                        />
-                        <Form.Check
-                            type={'radio'}
-                            name="male"
-                            label="아니오"
-                            id='day'
-                            value={'day'}
-                            checked={choose === 'day'}
-                            onChange={(e)=>onChange(e, 0)}
-                        />
-                         <Button variant="outline-dark"
-                            onClick={() => nextBtn()}
-                        >다음</Button>
-                    </div>
-                )
-            case 'male1' :
-                return (
-                    <div className="text-left space-y-4 font-bold">
-                        <h3>셋 중에 고르세요.</h3>
-                        <Form.Check
-                            type={'radio'}
-                            name="male1"
                             label="국밥"
                             id='국밥'
                             value={'국밥'}
@@ -148,7 +121,7 @@ const Meal = () => {
                         />
                          <Form.Check
                             type={'radio'}
-                            name="male1"
+                            name="male"
                             label="제육볶음"
                             id='제육볶음'
                             value={'제육볶음'}
@@ -157,12 +130,21 @@ const Meal = () => {
                         />
                          <Form.Check
                             type={'radio'}
-                            name="male1"
+                            name="male"
                             label="돈까스"
                             id='돈까스'
                             value={'돈까스'}
                             checked={choose === '돈까스'}
                             onChange={(e)=>onChange(e, 1)}
+                        />
+                          <Form.Check
+                            type={'radio'}
+                            name="male"
+                            label="아니오"
+                            id='day'
+                            value={'day'}
+                            checked={choose === 'day'}
+                            onChange={(e)=>onChange(e, 0)}
                         />
                         <Button variant="outline-dark"
                            onClick={() => nextBtn()}
