@@ -37,6 +37,9 @@
 ### 내꺼하기
 내 페이지에 즐긴 컨텐츠와 코멘트 포스팅
 
+### 추가예정
+...
+
 ## 사용한 기술
 ![Next JS](https://img.shields.io/badge/Next-black?style=for-the-badge&logo=next.js&logoColor=white)
 ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
