@@ -66,7 +66,7 @@
       "target": "https://random-word-api.herokuapp.com/"
     },
     "/location": {
-      "target": "https://geolocation-db.com/json/"
+      "target": "https://geolocation-db.com/"
     },
     "/youtube": {
       "target": "https://www.googleapis.com/"
