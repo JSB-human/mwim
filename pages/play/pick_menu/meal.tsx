@@ -55,7 +55,7 @@ const Meal = () => {
             case 'place' : 
                 return (
                     <div className="text-left space-y-4 font-bold">
-                        <h3>식사하실 장소를 입력해주세요.</h3>
+                        <h3>식사하실 지역을 입력해주세요.</h3>
                         <FloatingLabel controlId="floatingInput" label="장소">
                             <Form.Control type="text" className="border border-black w-full h-10"
                                 value={place}
