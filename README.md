@@ -74,7 +74,7 @@
 ![image](https://user-images.githubusercontent.com/59051855/183540277-d2052c28-dc77-40c4-912f-58d430731d04.png)
 
 ### 메인 페이지
-![image](https://user-images.githubusercontent.com/59051855/183540381-74bd2df2-f1e6-4fe8-be58-72d1e8991f81.png)
+![image](https://user-images.githubusercontent.com/59051855/184332457-31690842-fc95-43dd-b76b-2b1b5bbc497b.png)
 
 ### 내 페이지
 ![image](https://user-images.githubusercontent.com/59051855/183540587-5cc7025a-2945-4aa3-a7b7-bdf1bc9333c8.png)
