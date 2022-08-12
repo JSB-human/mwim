@@ -42,7 +42,7 @@ const NavBar = () => {
     }
  
     return(
-        <div className="grid grid-cols-3 bg-indigo-800 border-b border-gray-300 p-1 text-white h-full"> 
+        <div className="grid grid-cols-3 bg-violet-800 border-b border-gray-300 p-1 text-white h-full"> 
                 <div className='font-blackhansans text-sm relative h-[55px]'>
                     <Link href="/main">
                         <a>

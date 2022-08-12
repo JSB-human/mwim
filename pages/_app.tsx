@@ -9,6 +9,8 @@ import { useEffect } from 'react';
 import * as gtag from '../lib/gtags';
 import { SSRProvider } from '@react-aria/ssr';
 import Script from 'next/script';
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter();
@@ -21,6 +23,10 @@ function MyApp({ Component, pageProps }: AppProps) {
       router.events.off('routeChangeComplete', handleRouteChange)
     }
   }, [router.events])
+
+  useEffect(() => {
+    Aos.init()
+  }, [])
 
   return (
     <>

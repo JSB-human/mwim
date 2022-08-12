@@ -191,7 +191,8 @@ const HangMan = () => {
                             className="w-10 text-xl h-15 p-2 text-center border-2 border-black"
                             value={alphabet}
                             maxLength={1}
-                            onChange={(e : ChangeEvent<HTMLInputElement>) => {setAlphabet(e.target.value)}}
+                            style={{textTransform:"lowercase"}}
+                            onChange={(e : ChangeEvent<HTMLInputElement>) => {setAlphabet((e.target.value).toLowerCase())}}
                         />
                         <Button onClick={submit}
                             disabled={dis}

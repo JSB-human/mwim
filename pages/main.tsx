@@ -12,18 +12,19 @@ import {AiOutlineUnorderedList} from "react-icons/ai";
 const Main = () => {
 
     useEffect(() => {
-
     })
     
 
     return (
         <>
             <NavBar/>
-            <div className="text-center min-h-screen h-full w-full bg-gray-100 pt-2">
+            <div className="text-center min-h-screen h-full w-full bg-gray-50 pt-2">
                 <div className="container mx-auto px-4 grid grid-cols-1 lg:grid-cols-2 gap-2">
                     <div>
                         <Card>
-                            <Card.Img variant="top" src="" />
+                            <div className="p-2 flex items-center justify-center ">
+                                <Card.Img variant="top" src="/imgs/vs.png" className="h-20 w-auto"/>
+                            </div>
                             <Card.Body>
                                 <Card.Title>밸런스 게임</Card.Title>
                                 <Card.Text>
@@ -31,7 +32,7 @@ const Main = () => {
                                 </Card.Text>
                                 <Link href="/play/balance/0">
                                     <a> 
-                                        <Button>
+                                        <Button style={{backgroundColor : "#049CD8"}} variant="outline-light">
                                             <span className="flex">
                                                 <BsFillPlayFill size={22}/>
                                                 무작위
@@ -41,7 +42,7 @@ const Main = () => {
                                 </Link>
                                 <Link href="/play/balance/makebalance">
                                     <a>
-                                        <Button variant="success">
+                                        <Button style={{backgroundColor : "#E52521"}} variant="outline-light">
                                             <span className="flex">
                                                 <IoMdCreate size={20}/>
                                                 만들기
@@ -64,7 +65,9 @@ const Main = () => {
                     </div>
                     <div >
                         <Card>
-                            <Card.Img variant="top" src="" />
+                            <div className="p-2 flex items-center justify-center ">
+                                <Card.Img variant="top" src="/imgs/archive.png" className="h-20 w-auto"/>
+                            </div>
                             <Card.Body>
                                 <Card.Title>투표</Card.Title>
                                 <Card.Text>
@@ -72,7 +75,7 @@ const Main = () => {
                                 </Card.Text>
                                 <Link href="/play/vote/0">
                                     <a> 
-                                        <Button>
+                                        <Button style={{backgroundColor : "#049CD8"}} variant="outline-light">
                                             <span className="flex">
                                                 <BsFillPlayFill size={22}/>
                                                 무작위
@@ -82,7 +85,7 @@ const Main = () => {
                                 </Link>
                                 <Link href="/play/vote/makevote">
                                 <a>
-                                        <Button variant="success">
+                                    <Button style={{backgroundColor : "#E52521"}} variant="outline-light">
                                             <span className="flex">
                                                 <IoMdCreate size={20}/>
                                                 만들기
@@ -105,7 +108,9 @@ const Main = () => {
                     </div>
                     <div >
                         <Card>
-                            <Card.Img variant="top" src="" />
+                            <div className="p-2 flex items-center justify-center ">
+                                <Card.Img variant="top" src="/imgs/laugh.png" className="h-20 w-auto"/>
+                            </div>
                             <Card.Body>
                                 <Card.Title>고급 유머</Card.Title>
                                 <Card.Text>
@@ -113,7 +118,7 @@ const Main = () => {
                                 </Card.Text>
                                 <Link href="/play/joke/0">
                                     <a> 
-                                        <Button>
+                                        <Button style={{backgroundColor : "#049CD8"}} variant="outline-light">
                                             <span className="flex">
                                                 <BsFillPlayFill size={22}/>
                                                 무작위
@@ -123,7 +128,7 @@ const Main = () => {
                                 </Link>
                                 <Link href="/play/joke/makejoke">
                                     <a>
-                                        <Button variant="success">
+                                        <Button style={{backgroundColor : "#E52521"}} variant="outline-light">
                                             <span className="flex">
                                                 <IoMdCreate size={20}/>
                                                 만들기
@@ -146,7 +151,9 @@ const Main = () => {
                     </div>
                     <div >
                         <Card>
-                            <Card.Img variant="top" src="" />
+                            <div className="p-2 flex items-center justify-center ">
+                                <Card.Img variant="top" src="/imgs/smile-hand-drawn-emoticon.png" className="h-20 w-auto"/>
+                            </div>
                             <Card.Body>
                                 <Card.Title>행맨</Card.Title>
                                 <Card.Text>
@@ -154,7 +161,7 @@ const Main = () => {
                                 </Card.Text>
                                 <Link href="/play/hangman/hangman">
                                     <a> 
-                                        <Button>
+                                        <Button style={{backgroundColor : "#049CD8"}} variant="outline-light">
                                             <span className="flex">
                                                 <BsFillPlayFill size={22}/>
                                                 플레이
@@ -167,7 +174,9 @@ const Main = () => {
                     </div>
                     <div >
                         <Card>
-                            <Card.Img variant="top" src="" />
+                            <div className="p-2 flex items-center justify-center ">
+                                <Card.Img variant="top" src="/imgs/discussion.png" className="h-20 w-auto"/>
+                            </div>
                             <Card.Body>
                                 <Card.Title>토론</Card.Title>
                                 <Card.Text>
@@ -175,7 +184,7 @@ const Main = () => {
                                 </Card.Text>
                                 <Link href="/play/debate/0">
                                     <a> 
-                                        <Button>
+                                        <Button style={{backgroundColor : "#049CD8"}} variant="outline-light">
                                             <span className="flex">
                                                 <BsFillPlayFill size={22}/>
                                                 무작위
@@ -185,7 +194,7 @@ const Main = () => {
                                 </Link>
                                 <Link href="/play/debate/makedebate">
                                     <a>
-                                        <Button variant="success">
+                                        <Button style={{backgroundColor : "#E52521"}} variant="outline-light">
                                             <span className="flex">
                                                 <IoMdCreate size={20}/>
                                                 만들기
@@ -195,7 +204,7 @@ const Main = () => {
                                 </Link>
                                 <Link href="/play/debate/list/1">
                                     <a>
-                                        <Button variant="danger">
+                                        <Button style={{backgroundColor : "#43B047"}} variant="outline-light">
                                             <span className="flex">
                                                 <AiOutlineUnorderedList size={20}/>
                                                 목록
@@ -208,7 +217,9 @@ const Main = () => {
                     </div>
                     <div >
                         <Card>
-                            <Card.Img variant="top" src="" />
+                            <div className="p-2 flex items-center justify-center ">
+                                <Card.Img variant="top" src="/imgs/bitcoin.png" className="h-20 w-auto"/>
+                            </div>
                             <Card.Body>
                                 <Card.Title>코인 가격 예측</Card.Title>
                                 <Card.Text>
@@ -216,7 +227,7 @@ const Main = () => {
                                 </Card.Text>
                                 <Link href="/play/coin/guessCoin">
                                     <a> 
-                                        <Button>
+                                        <Button style={{backgroundColor : "#049CD8"}} variant="outline-light">
                                             <span className="flex">
                                                 <BsFillPlayFill size={22}/>
                                                 플레이
@@ -229,7 +240,9 @@ const Main = () => {
                     </div>
                     <div >
                         <Card>
-                            <Card.Img variant="top" src="" />
+                            <div className="p-2 flex items-center justify-center ">
+                                <Card.Img variant="top" src="/imgs/video-camera.png" className="h-20 w-auto"/>
+                            </div>
                             <Card.Body>
                                 <Card.Title>영화 퀴즈</Card.Title>
                                 <Card.Text>
@@ -237,7 +250,7 @@ const Main = () => {
                                 </Card.Text>
                                 <Link href="/play/guess_movie/movie">
                                     <a> 
-                                        <Button>
+                                        <Button style={{backgroundColor : "#049CD8"}} variant="outline-light">
                                             <span className="flex">
                                                 <BsFillPlayFill size={22}/>
                                                 플레이
@@ -250,7 +263,9 @@ const Main = () => {
                     </div>
                     <div >
                         <Card>
-                            <Card.Img variant="top" src="" />
+                            <div className="p-2 flex items-center justify-center ">
+                                <Card.Img variant="top" src="/imgs/won.png" className="h-20 w-auto"/>
+                            </div>
                             <Card.Body>
                                 <Card.Title>상품 최저가 맞추기</Card.Title>
                                 <Card.Text>
@@ -258,7 +273,7 @@ const Main = () => {
                                 </Card.Text>
                                 <Link href="/play/guess_price/price">
                                     <a> 
-                                        <Button>
+                                        <Button style={{backgroundColor : "#049CD8"}} variant="outline-light">
                                             <span className="flex">
                                                 <BsFillPlayFill size={22}/>
                                                 플레이
@@ -271,7 +286,9 @@ const Main = () => {
                     </div>
                     <div >
                         <Card>
-                            <Card.Img variant="top" src="" />
+                            <div className="p-2 flex items-center justify-center ">
+                                <Card.Img variant="top" src="/imgs/music.png" className="h-20 w-auto"/>
+                            </div>
                             <Card.Body>
                                 <Card.Title>음악 맞추기</Card.Title>
                                 <Card.Text>
@@ -279,7 +296,7 @@ const Main = () => {
                                 </Card.Text>
                                 <Link href="/play/guess_music/music">
                                     <a> 
-                                        <Button>
+                                        <Button style={{backgroundColor : "#049CD8"}} variant="outline-light">
                                             <span className="flex">
                                                 <BsFillPlayFill size={22}/>
                                                 플레이
@@ -292,7 +309,9 @@ const Main = () => {
                     </div>
                     <div >
                         <Card>
-                            <Card.Img variant="top" src="" />
+                            <div className="p-2 flex items-center justify-center ">
+                                <Card.Img variant="top" src="/imgs/cutlery.png" className="h-20 w-auto"/>
+                            </div>
                             <Card.Body>
                                 <Card.Title>메뉴 정하기</Card.Title>
                                 <Card.Text>
@@ -300,7 +319,7 @@ const Main = () => {
                                 </Card.Text>
                                 <Link href="/play/pick_menu/meal">
                                     <a> 
-                                        <Button>
+                                        <Button style={{backgroundColor : "#049CD8"}} variant="outline-light">
                                             <span className="flex">
                                                 <BsFillPlayFill size={22}/>
                                                 플레이
