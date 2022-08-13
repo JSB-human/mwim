@@ -159,6 +159,9 @@ const Register = () => {
                 setUidGood(true);
             }
         })
+        .catch((err) => {
+            setUid("");
+        })
     }
 
     const checkNickname = () => {
@@ -304,7 +307,7 @@ const Register = () => {
                     className="w-full border border-black h-16 p-2 text-xl"
                     onBlur={checkUid}
                     value={uid}
-                    onChange={(e)=>{setUid(e.target.value)}}
+                    onChange={(e)=>{setUid(e.target.value.replace(/[ㄱ-ㅎ|ㅏ-ㅣ|가-힣\{\}\[\]\/?.,;:|\)*~`!^\-_+<>@\#$%&\\\=\(\'\"]/gi,""))}}
                 />
                 <label htmlFor="nickname" className="text-gray-700 text-xl mt-2">닉네임</label>
                 {

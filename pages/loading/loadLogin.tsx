@@ -189,7 +189,7 @@ const LoadLogin = () => {
                 <input type="text"
                     className="w-full h-15 rounded-lg p-2 text-2xl text-center border border-black"
                     value={uid}
-                    onChange={(e)=>setUid(e.target.value)}
+                    onChange={(e)=>setUid(e.target.value.replace(/[ㄱ-ㅎ|ㅏ-ㅣ|가-힣\{\}\[\]\/?.,;:|\)*~`!^\-_+<>@\#$%&\\\=\(\'\"]/gi,""))}
                     onBlur={CheckUid}
                 />
                 <h5>{uidLabel}</h5>

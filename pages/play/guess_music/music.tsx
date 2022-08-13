@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { Button, Dropdown, DropdownButton } from "react-bootstrap";
+import { Button, Dropdown, DropdownButton, Spinner } from "react-bootstrap";
 import { AiOutlinePauseCircle } from "react-icons/ai";
 import { BsFillPlayFill } from "react-icons/bs";
 import YouTube, { YouTubeEvent, YouTubeProps } from "react-youtube";
@@ -27,6 +27,7 @@ const Music = () => {
     const [nowPlaying, setNowPlaying] = useState(false);
     const [region, setRegion] = useState('PL4fGSI1pDJn6jXS_Tv_N9B8Z0HTRVJE0m');
     const [regionTxt, setRegionTxt] = useState('한국');
+    const [ready, setReady] = useState(false);
     
     useEffect(() => {
         axios.get(`/youtube_top/${region}`)
@@ -41,6 +42,7 @@ const Music = () => {
 
     const onReady:YouTubeProps['onReady'] = (e) => {
         // e.target.pauseVideo();
+        setReady(true);
         setVideo(e.target);
     }
 
@@ -51,7 +53,6 @@ const Music = () => {
 
     const nextMusic = () => {
         const rand = Math.floor(Math.random() * 50);
-        console.log(rand);
         setNowPlaying(false);
         setShowBtn('hidden');
         setCnt(rand);
@@ -67,6 +68,8 @@ const Music = () => {
     }
 
     const DDBtn = (title:string, rg:string) => {
+        setNowPlaying(false);
+        setReady(false);
         setShowBtn('hidden');
         setRegionTxt(title);
         setRegion(rg);
@@ -81,7 +84,6 @@ const Music = () => {
                         <b className="">음악 맞추기</b>
                 </div>
                 <div className="mt-4">
-                
                     <DropdownButton id='dropdownBtn' title={regionTxt} className="mb-4" variant="outline-dark">
                         <Dropdown.Item onClick={() => DDBtn('한국', 'PL4fGSI1pDJn6jXS_Tv_N9B8Z0HTRVJE0m')}>한국</Dropdown.Item>
                         <Dropdown.Item onClick={() => DDBtn('글로벌', 'PL4fGSI1pDJn6puJdseH2Rt9sMvt9E2M4i')}>글로벌</Dropdown.Item>
@@ -124,11 +126,17 @@ const Music = () => {
                         }
                         variant="primary"
                         className="w-full"
+                        disabled={!ready}
                         >
-                            <span className="flex items-center justify-center">
-                                <BsFillPlayFill size={22}/>
-                                시작
-                            </span>
+                            {
+                                ready ?
+                                <span className="flex items-center justify-center">
+                                    <BsFillPlayFill size={22}/>
+                                    시작
+                                </span>
+                                :
+                                <Spinner animation="border" className="" variant="dark"/>
+                            }
                         </Button>
                     }
                    
