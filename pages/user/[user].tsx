@@ -91,9 +91,10 @@ const UserPage = () => {
         }
 
         return (
-            <Link href={url}>
+            <Link href={url} passHref>
                 <div className="hover:cursor-pointer flex items-center justify-center bg-white">
                     <Image src={`/imgs/${imgTxt}.png`} 
+                        alt = {"pageImg"}
                         width={100}
                         height={100}
                         className="hover:cursor-pointer"

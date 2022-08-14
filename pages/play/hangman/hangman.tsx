@@ -1,7 +1,7 @@
 import axios from "axios";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { ChangeEvent, ChangeEventHandler, useEffect, useRef, useState } from "react";
+import { ChangeEvent, ChangeEventHandler, Key, ReactChild, ReactFragment, ReactPortal, useEffect, useMemo, useRef, useState } from "react";
 import { Button, Spinner } from "react-bootstrap";
 import Footer from "../../../component/footer";
 import NavBar from "../../../component/navBar";
@@ -145,10 +145,14 @@ const HangMan = () => {
             let indexArr : number[] = [];
             for(var i=0; i < answer.length; i++){
                 let index = answer.indexOf(alphabet, i);
-                indexArr.push(index);
+                if(index !== -1){
+                    indexArr.push(index);
+                }
             }
             for(var i=0; i < indexArr.length; i++){
-                nowWord[indexArr[i]] = alphabet;
+                if(alphabet !== ''){
+                    nowWord[indexArr[i]] = alphabet;
+                }
             }
 
         }else{
@@ -159,7 +163,8 @@ const HangMan = () => {
         }
         setAlphabet('');
     }
-
+    
+    
     
     return(
         <>
@@ -178,13 +183,13 @@ const HangMan = () => {
                             <Spinner animation="border" />
                             :
                             nowWord.map((val, i) => { 
+                                console.log(nowWord)
                                 return (
                                 <span className="text-3xl mr-2 h-full" key={i}>
                                     {val}
                                 </span>
-                            )})
-                        }    
-                       
+                            )})   
+                        }
                     </div>
                     <div className="mt-2 h-20" >
                         <input type="text" 
@@ -203,7 +208,6 @@ const HangMan = () => {
                         <Button
                             variant={"danger"}
                             onClick={retry}
-                            
                         >다시하기</Button>  
                     </div>
                     <ShareBtns

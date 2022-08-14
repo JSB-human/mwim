@@ -18,7 +18,7 @@ const Main = () => {
     return (
         <>
             <NavBar/>
-            <div className="text-center min-h-screen h-full w-full bg-gray-50 pt-2">
+            <div className="text-center min-h-screen h-full w-full pt-2 pb-2">
                 <div className="container mx-auto px-4 grid grid-cols-1 lg:grid-cols-2 gap-2">
                     <div>
                         <Card>
