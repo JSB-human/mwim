@@ -37,7 +37,7 @@ const TestGame = () => {
         <div className="h-full min-h-screen bg-[#049CD8] font-nexon">
             <div className="container">
                 <div className="text-center text-white">
-                    <h1>신조어 테스트</h1>
+                    <h1>테스트</h1>
                 </div>
                 <div className="bg-white p-5 border-4 border-[#FBD000] rounded-3xl">
                     <h2>{no}번째 문제</h2>

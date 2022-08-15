@@ -40,7 +40,7 @@ const Main = () => {
                                         </Button>
                                     </a>
                                 </Link>
-                                <Link href="#">
+                                <Link href="/play/test_game/maketest">
                                     <a>
                                         <Button style={{backgroundColor : "#E52521"}} variant="outline-light">
                                             <span className="flex">
@@ -50,7 +50,7 @@ const Main = () => {
                                         </Button>
                                     </a>
                                 </Link>
-                                <Link href="#">
+                                <Link href="/play/test_game/testlist">
                                     <a>
                                         <Button style={{backgroundColor : "#43B047"}} variant="outline-light">
                                             <span className="flex">
