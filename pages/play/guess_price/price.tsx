@@ -142,7 +142,7 @@ const Price = () => {
             {
                 mode === 1 ?
 
-                <div className="h-full min-h-screen bg-gray-100">
+                <div className="h-full min-h-screen bg-gray-100  font-nexon">
                     <div className="text-center text-2xl p-2">
                         <b className="">상품 가격 맞추기</b>
                     </div>

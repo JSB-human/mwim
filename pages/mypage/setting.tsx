@@ -131,7 +131,7 @@ const MyPage = () => {
     return(
         <>
             <NavBar></NavBar>
-            <div className="min-h-screen h-full w-full bg-gray-100">
+            <div className="min-h-screen h-full w-full bg-gray-100 font-nexon">
                 <div className="container mx-auto px-4 grid grid-cols-1 gap-2">
                     <div className="bg-white rounded border-black border p-4">
                         <h2 className="font-bold flex">

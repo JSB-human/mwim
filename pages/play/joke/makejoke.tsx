@@ -44,7 +44,7 @@ const MakeJoke = () => {
     return(
         <>
             <NavBar/>
-            <div className="h-screen bg-gray-100">
+            <div className="h-screen bg-gray-100 font-nexon">
                 <div className="container mx-auto px-4 text-center">
                     <div className="text-center text-2xl">
                         고급 유머 만들기

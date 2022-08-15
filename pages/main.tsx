@@ -18,8 +18,51 @@ const Main = () => {
     return (
         <>
             <NavBar/>
-            <div className="text-center min-h-screen h-full w-full pt-2 pb-2">
+            <div className="text-center min-h-screen h-full w-full pt-2 pb-2 font-nexon">
                 <div className="container mx-auto px-4 grid grid-cols-1 lg:grid-cols-2 gap-2">
+                <div>
+                        <Card>
+                            <div className="p-2 flex items-center justify-center ">
+                                <Card.Img variant="top" src="/imgs/test.png" className="h-20 w-auto"/>
+                            </div>
+                            <Card.Body>
+                                <Card.Title>테스트</Card.Title>
+                                <Card.Text>
+                                    여러 테스트를 해보세요.
+                                </Card.Text>
+                                <Link href="/play/test_game/0">
+                                    <a> 
+                                        <Button style={{backgroundColor : "#049CD8"}} variant="outline-light">
+                                            <span className="flex">
+                                                <BsFillPlayFill size={22}/>
+                                                무작위
+                                            </span>
+                                        </Button>
+                                    </a>
+                                </Link>
+                                <Link href="#">
+                                    <a>
+                                        <Button style={{backgroundColor : "#E52521"}} variant="outline-light">
+                                            <span className="flex">
+                                                <IoMdCreate size={20}/>
+                                                준비중
+                                            </span>
+                                        </Button>
+                                    </a>
+                                </Link>
+                                <Link href="#">
+                                    <a>
+                                        <Button style={{backgroundColor : "#43B047"}} variant="outline-light">
+                                            <span className="flex">
+                                                <AiOutlineUnorderedList size={20}/>
+                                                준비중
+                                            </span>
+                                        </Button>
+                                    </a>
+                                </Link>
+                            </Card.Body>
+                        </Card>
+                    </div>
                     <div>
                         <Card>
                             <div className="p-2 flex items-center justify-center ">
@@ -323,6 +366,29 @@ const Main = () => {
                                             <span className="flex">
                                                 <BsFillPlayFill size={22}/>
                                                 플레이
+                                            </span>
+                                        </Button>
+                                    </a>
+                                </Link>
+                            </Card.Body>
+                        </Card>
+                    </div>
+                    <div>
+                        <Card>
+                            <div className="p-2 flex items-center justify-center ">
+                                <Card.Img variant="top" src="/imgs/engineer.png" className="h-20 w-auto"/>
+                            </div>
+                            <Card.Body>
+                                <Card.Title>추가 예정</Card.Title>
+                                <Card.Text>
+                                    새로운 컨텐츠 준비중
+                                </Card.Text>
+                                <Link href="#">
+                                    <a> 
+                                        <Button style={{backgroundColor : "#049CD8"}} variant="outline-light">
+                                            <span className="flex">
+                                                <BsFillPlayFill size={22}/>
+                                                예정
                                             </span>
                                         </Button>
                                     </a>

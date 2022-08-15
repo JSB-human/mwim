@@ -40,7 +40,7 @@ const MakeDebate = () => {
     return (
         <>
         <NavBar></NavBar>
-        <div className="min-h-screen h-full bg-gray-100">
+        <div className="min-h-screen h-full bg-gray-100 font-nexon">
             <div className="container mx-auto px-4 bg-white p-2">
                 <div className="text-center text-2xl">
                     토론 만들기

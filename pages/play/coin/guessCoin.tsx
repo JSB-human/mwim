@@ -137,7 +137,7 @@ const GuessCoin = () => {
     return(
         <>
             <NavBar/>
-                <div className="h-full min-h-screen bg-gray-100">
+                <div className="h-full min-h-screen bg-gray-100 font-nexon">
                     <div className="text-center text-2xl p-2">
                         <b className="">랜덤 코인 가격 맞추기</b>
                     </div>
