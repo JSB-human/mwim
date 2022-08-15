@@ -103,7 +103,7 @@ const Debate = () => {
     return(
         <>
             <NavBar/>
-            <div className="h-full min-h-screen bg-gray-100 grid">
+            <div className="h-full min-h-screen bg-gray-100 grid font-nexon">
                 <div className="container h-full ">
                     <div className="text-xl text-center p-2 rounded-lg bg-white">
                         {title}

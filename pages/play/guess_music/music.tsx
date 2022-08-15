@@ -78,7 +78,7 @@ const Music = () => {
     return(
         <>
         <NavBar></NavBar>
-        <div className="h-full min-h-screen bg-gray-100">
+        <div className="h-full min-h-screen bg-gray-100  font-nexon">
             <div className="container">
                 <div className="text-center text-3xl">
                         <b className="">음악 맞추기</b>

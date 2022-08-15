@@ -14,7 +14,7 @@ const Home: NextPage = () => {
   
 
   return (
-    <div className="min-h-screen h-full w-full text-center overflow-hidden">
+    <div className="min-h-screen h-full w-full text-center overflow-hidden  font-nexon">
       <main>
         <div className='row'>
           <div className='relative h-[240px] w-52'>
@@ -34,7 +34,7 @@ const Home: NextPage = () => {
           <div className="bg-[#049CD8] min-h-screen h-full">
             <div>
               <Image src="/imgs/imgs.gif" className="bg-white p-3 rounded-full" width={180} height={180} alt="contents"/>
-              <h1 className="text-white">많은 놀이가 준비되어있어요.</h1>
+              <h1 className="text-white">많은 놀이를 준비했어요</h1>
               <Link href="/main" passHref>
                 <button className="bg-green-400 hover:bg-yellow-400 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
                     둘러보기

@@ -41,7 +41,7 @@ const MakeBalance = () => {
     return (
         <>
         <NavBar></NavBar>
-        <div className="min-h-screen h-full bg-slate-100">
+        <div className="min-h-screen h-full bg-slate-100 font-nexon">
             <div className="container mx-auto px-4">
                 <div className="text-center text-2xl">
                     밸런스게임 만들기

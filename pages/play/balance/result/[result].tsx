@@ -47,7 +47,7 @@ const Balance_Result = () => {
     return (
         <>
         <NavBar></NavBar>
-        <div className="h-full min-h-screen bg-slate-100">
+        <div className="h-full min-h-screen bg-slate-100 font-nexon">
             <div className="container mx-auto px-4 text-center">
                 <div className="text-3xl">
                     결과

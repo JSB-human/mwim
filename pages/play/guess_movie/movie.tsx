@@ -57,7 +57,7 @@ const Guess_Movie = () => {
     return(
         <>
             <NavBar/>
-            <div className="h-full min-h-screen bg-gray-100 text-center">
+            <div className="h-full min-h-screen bg-gray-100 text-center font-nexon">
              <div className="container">
               <div className="text-2xl">
                 <b>영화 제목 맞추기</b>

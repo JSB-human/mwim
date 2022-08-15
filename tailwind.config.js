@@ -4,6 +4,7 @@ module.exports = {
     extend: {
       fontFamily : {
         blackhansans : ["BlackHanSans", "sans-serif"],
+        nexon : ["NexonLv2", "BlackHanSans"]
       }
 
     },

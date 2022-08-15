@@ -72,7 +72,7 @@ const MakeVote = () => {
     return (
         <>
         <NavBar></NavBar>
-        <div className="min-h-screen h-full bg-slate-100">
+        <div className="min-h-screen h-full bg-slate-100 font-nexon">
             <div className="container mx-auto px-4 text-center">
                 <div className="text-center text-2xl">
                     투표 만들기

@@ -87,7 +87,7 @@ const Vote = () => {
     return(
         <>
             <NavBar/>
-            <div className="h-full min-h-screen bg-gray-100">
+            <div className="h-full min-h-screen bg-gray-100  font-nexon">
                 <div className="container mx-auto px-4 text-center">
                     <div className="text-center text-3xl">
                         <b>투표</b> 

@@ -26,7 +26,7 @@ const Debate_List = () => {
     return (
         <>
             <NavBar/>
-            <div className="h-full min-h-screen bg-gray-100">
+            <div className="h-full min-h-screen bg-gray-100 font-nexon">
                 <div className="container p-2">
                     <div className="text-center text-2xl p-2">
                         <b className="">토론</b>

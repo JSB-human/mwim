@@ -107,7 +107,7 @@ const UserPage = () => {
     return (
         <>
         <NavBar></NavBar>
-        <div className="min-h-screen h-full bg-gray-100">
+        <div className="min-h-screen h-full bg-gray-100 font-nexon">
            
                 {
                     notFound ? 

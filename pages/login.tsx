@@ -49,7 +49,7 @@ const Login = ({ Component, pageProps }: AppProps) => {
     }
 
     return(
-        <div className="bg-white h-full w-full">
+        <div className="bg-white h-full w-full ">
             <div className="text-4xl text-center">
                 <div className='grid grid-cols-1 font-blackhansans justify-items-center'>
                     <div className='relative h-[120px] w-52'>
