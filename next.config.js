@@ -40,7 +40,7 @@ const nextConfig = {
     
   },
   images : {
-    domains :['image.tmdb.org','bookthumb-phinf.pstatic.net','shopping-phinf.pstatic.net'],
+    domains :['image.tmdb.org','bookthumb-phinf.pstatic.net','shopping-phinf.pstatic.net','mwim-imgs.s3.ap-northeast-2.amazonaws.com'],
   },
   env : {
     BASE_URL : process.env.BASE_URL
