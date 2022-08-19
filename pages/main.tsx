@@ -26,9 +26,9 @@ const Main = () => {
                                 <Card.Img variant="top" src="/imgs/test.png" className="h-20 w-auto"/>
                             </div>
                             <Card.Body>
-                                <Card.Title>테스트</Card.Title>
+                                <Card.Title>테스트 미완성</Card.Title>
                                 <Card.Text>
-                                    여러 테스트를 해보세요.
+                                    테스트 제작중...
                                 </Card.Text>
                                 <Link href="/play/test_game/0">
                                     <a> 
