@@ -61,6 +61,12 @@ const Meal = () => {
                                 value={place}
                                 onChange={(e) => setPlace(e.target.value)}
                                 placeholder="서울"
+                                onKeyDown={(e)=>{
+                                    if(e.key === 'Enter'){
+                                        setChoose('first');
+                                        setStep('first');
+                                    }
+                                }}
                             />
                         </FloatingLabel>
                         <Button variant="outline-dark"
