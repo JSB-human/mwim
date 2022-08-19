@@ -45,7 +45,7 @@ const Main = () => {
                                         <Button style={{backgroundColor : "#E52521"}} variant="outline-light">
                                             <span className="flex">
                                                 <IoMdCreate size={20}/>
-                                                준비중
+                                                만들기
                                             </span>
                                         </Button>
                                     </a>
@@ -55,7 +55,7 @@ const Main = () => {
                                         <Button style={{backgroundColor : "#43B047"}} variant="outline-light">
                                             <span className="flex">
                                                 <AiOutlineUnorderedList size={20}/>
-                                                준비중
+                                                목록
                                             </span>
                                         </Button>
                                     </a>

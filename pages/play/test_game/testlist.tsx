@@ -1,7 +1,24 @@
+import axios from "axios";
+import Link from "next/link";
+import { useEffect, useState } from "react";
+import { Table } from "react-bootstrap";
 import Footer from "../../../component/footer";
 import NavBar from "../../../component/navBar";
 
+interface testJson {
+    test_no : number;
+    title : string;
+}
+
 const TestList = () => {
+    const [testArr, setTestArr] = useState<Array<testJson>>([]);
+
+    useEffect(() => {
+        axios.get('/spring/testGame/list')
+        .then((res)=> {
+            setTestArr(res.data);
+        })
+    })
 
     return(
         <>
@@ -10,6 +27,32 @@ const TestList = () => {
             <div className="container">
                 <div className="text-center">
                     <h1 className="text-white">테스트</h1>
+                </div>
+                <div className="border-4 border-green-400 bg-white p-2">
+                    <div>
+                        <Table variant="light">
+                            <thead>
+                                <tr>
+                                    <h3>테스트 리스트</h3>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {
+                                    testArr.map((val, i) => {
+                                        return (
+                                            <td key={i}>
+                                                <Link href={`/play/test_game/${val.test_no}`}>
+                                                    <a>
+                                                        {val.title}
+                                                    </a>
+                                                </Link>
+                                            </td>
+                                        )
+                                    })
+                                }
+                            </tbody>
+                        </Table>
+                    </div>
                 </div>
             </div>
         </div>
