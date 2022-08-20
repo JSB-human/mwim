@@ -18,7 +18,7 @@ const TestList = () => {
         .then((res)=> {
             setTestArr(res.data);
         })
-    })
+    },[])
 
     return(
         <>
@@ -30,23 +30,27 @@ const TestList = () => {
                 </div>
                 <div className="border-4 border-green-400 bg-white p-2">
                     <div>
-                        <Table variant="light">
+                        <Table >
                             <thead>
                                 <tr>
-                                    <h3>테스트 리스트</h3>
+                                    <th>
+                                        <h3>테스트 리스트</h3>
+                                    </th>
                                 </tr>
                             </thead>
                             <tbody>
                                 {
                                     testArr.map((val, i) => {
                                         return (
-                                            <td key={i}>
-                                                <Link href={`/play/test_game/${val.test_no}`}>
-                                                    <a>
-                                                        {val.title}
-                                                    </a>
-                                                </Link>
-                                            </td>
+                                            <Link href={`/play/test_game/${val.test_no}`} key={i}>
+                                                <tr key={i} className="hover:cursor-pointer">
+                                                    <td>
+                                                        <a className="text-black decoration-white">
+                                                            {val.title}
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                            </Link>
                                         )
                                     })
                                 }
