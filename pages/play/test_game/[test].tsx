@@ -34,45 +34,87 @@ const TestGame = () => {
     const [rightCnt, setRightCnt] = useState<number>(0);
 
     useEffect(() => {
-        axios.get(`/spring/testGame/get/${test_no}`)
-        .then((res) => {
-            try {
-                setTitle(res.data.title);
-                let qusetionArr = [];
-                qusetionArr.push(res.data.q1);
-                qusetionArr.push(res.data.q2);
-                qusetionArr.push(res.data.q3);
-                qusetionArr.push(res.data.q4);
-                qusetionArr.push(res.data.q5);
-                qusetionArr.push(res.data.q6);
-                qusetionArr.push(res.data.q7);
-                qusetionArr.push(res.data.q8);
-                qusetionArr.push(res.data.q9);
-                qusetionArr.push(res.data.q10);
-                setQuestion(qusetionArr);
-
-                let answerArr = [];
-                answerArr.push(JSON.parse(res.data.a1));
-                answerArr.push(JSON.parse(res.data.a2));
-                answerArr.push(JSON.parse(res.data.a3));
-                answerArr.push(JSON.parse(res.data.a4));
-                answerArr.push(JSON.parse(res.data.a5));
-                answerArr.push(JSON.parse(res.data.a6));
-                answerArr.push(JSON.parse(res.data.a7));
-                answerArr.push(JSON.parse(res.data.a8));
-                answerArr.push(JSON.parse(res.data.a9));
-                answerArr.push(JSON.parse(res.data.a10));
-                setChoice(answerArr);
-
-                setResultTxts(JSON.parse(res.data.resultTxt));
-                setCorrect(JSON.parse(res.data.correct));
+        if(test_no === '0'){
+            axios.get('/spring/testGame/get/rand')
+            .then((res) => {
+                try {
+                    setTitle(res.data.title);
+                    let qusetionArr = [];
+                    qusetionArr.push(res.data.q1);
+                    qusetionArr.push(res.data.q2);
+                    qusetionArr.push(res.data.q3);
+                    qusetionArr.push(res.data.q4);
+                    qusetionArr.push(res.data.q5);
+                    qusetionArr.push(res.data.q6);
+                    qusetionArr.push(res.data.q7);
+                    qusetionArr.push(res.data.q8);
+                    qusetionArr.push(res.data.q9);
+                    qusetionArr.push(res.data.q10);
+                    setQuestion(qusetionArr);
+    
+                    let answerArr = [];
+                    answerArr.push(JSON.parse(res.data.a1));
+                    answerArr.push(JSON.parse(res.data.a2));
+                    answerArr.push(JSON.parse(res.data.a3));
+                    answerArr.push(JSON.parse(res.data.a4));
+                    answerArr.push(JSON.parse(res.data.a5));
+                    answerArr.push(JSON.parse(res.data.a6));
+                    answerArr.push(JSON.parse(res.data.a7));
+                    answerArr.push(JSON.parse(res.data.a8));
+                    answerArr.push(JSON.parse(res.data.a9));
+                    answerArr.push(JSON.parse(res.data.a10));
+                    setChoice(answerArr);
+    
+                    setResultTxts(JSON.parse(res.data.resultTxt));
+                    setCorrect(JSON.parse(res.data.correct));
+                    
+                    setImgs(JSON.parse(res.data.imgs));
+                } catch (error) {
+                    setImgs([]);
+                }
+            })
+        }else{
+            axios.get(`/spring/testGame/get/${test_no}`)
+            .then((res) => {
+                try {
+                    setTitle(res.data.title);
+                    let qusetionArr = [];
+                    qusetionArr.push(res.data.q1);
+                    qusetionArr.push(res.data.q2);
+                    qusetionArr.push(res.data.q3);
+                    qusetionArr.push(res.data.q4);
+                    qusetionArr.push(res.data.q5);
+                    qusetionArr.push(res.data.q6);
+                    qusetionArr.push(res.data.q7);
+                    qusetionArr.push(res.data.q8);
+                    qusetionArr.push(res.data.q9);
+                    qusetionArr.push(res.data.q10);
+                    setQuestion(qusetionArr);
+    
+                    let answerArr = [];
+                    answerArr.push(JSON.parse(res.data.a1));
+                    answerArr.push(JSON.parse(res.data.a2));
+                    answerArr.push(JSON.parse(res.data.a3));
+                    answerArr.push(JSON.parse(res.data.a4));
+                    answerArr.push(JSON.parse(res.data.a5));
+                    answerArr.push(JSON.parse(res.data.a6));
+                    answerArr.push(JSON.parse(res.data.a7));
+                    answerArr.push(JSON.parse(res.data.a8));
+                    answerArr.push(JSON.parse(res.data.a9));
+                    answerArr.push(JSON.parse(res.data.a10));
+                    setChoice(answerArr);
+    
+                    setResultTxts(JSON.parse(res.data.resultTxt));
+                    setCorrect(JSON.parse(res.data.correct));
+                    
+                    setImgs(JSON.parse(res.data.imgs));
+                } catch (error) {
+                    setImgs([]);
+                }
                 
-                setImgs(JSON.parse(res.data.imgs));
-            } catch (error) {
-                setImgs([]);
-            }
-            
-        })
+            })
+        }
+
     }, [test_no])
 
     useEffect(() => {
