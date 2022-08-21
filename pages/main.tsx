@@ -30,7 +30,7 @@ const Main = () => {
                                 <Card.Text>
                                     테스트를 즐겨보세요.
                                 </Card.Text>
-                                {/* <Link href="/play/test_game/0">
+                                <Link href="/play/test_game/0">
                                     <a> 
                                         <Button style={{backgroundColor : "#049CD8"}} variant="outline-light">
                                             <span className="flex">
@@ -39,7 +39,7 @@ const Main = () => {
                                             </span>
                                         </Button>
                                     </a>
-                                </Link> */}
+                                </Link>
                                 <Link href="/play/test_game/maketest">
                                     <a>
                                         <Button style={{backgroundColor : "#E52521"}} variant="outline-light">
