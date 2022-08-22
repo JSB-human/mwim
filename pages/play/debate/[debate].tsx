@@ -187,9 +187,9 @@ const Debate = () => {
                                             <div className="grid grid-cols-2">
                                                 <div className=" text-right">
                                                     <div className="bg-gray-200 rounded-lg p-2 w-full">
-                                                        <span className="text-xs font-semibold">
+                                                        {/* <span className="text-xs font-semibold">
                                                             {"추천 " + val.opinion_like + " "}
-                                                        </span>
+                                                        </span> */}
                                                         <span className="text-xs">
                                                             {moment(val.writeTime).format('YYYY-MM-DD h:mm')}
                                                         </span>
