@@ -22,7 +22,6 @@ const Joke = () => {
     const joke_no = router.query.joke || "0";
 
     useEffect(() => {   
-        console.log(joke_no);
         if(joke_no === '0'){
             axios.get('/spring/joke/get/rand')
             .then((res) => {

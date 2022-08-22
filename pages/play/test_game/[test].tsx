@@ -119,7 +119,6 @@ const TestGame = () => {
 
     useEffect(() => {
         if(no === 11){
-            console.log(correct, answer);
             let cnt = 0;
             for(var i=0; i<10; i++){
                 if(correct[i] === answer[i]){
@@ -211,6 +210,41 @@ const TestGame = () => {
                             urlString=""
                          
                         />
+                    </div>
+                    <div className="mt-10 rounded-lg p-2">
+                        <h1>정답</h1>
+                        {
+                            choice.map((val, i) => {
+                                let result = '';
+                                let resultColor = '';
+                                if(correct[i] === answer[i]){
+                                    result = 'O';
+                                    resultColor = 'text-blue-500';
+                                }else{
+                                    result = 'X';
+                                    resultColor = 'text-red-500';
+                                }
+                                
+                                let correct_answer = '';
+                                if(correct[i] === 0){
+                                    correct_answer = val.answer1;
+                                }else if(correct[i] === 1){
+                                    correct_answer = val.answer2;
+                                }else if(correct[i] === 2){
+                                    correct_answer = val.answer3;
+                                }else if(correct[i] === 3){
+                                    correct_answer = val.answer4;
+                                }
+
+                                return(
+                                    <div className="mt-4 rounded-lg bg-[#C8EE9D] p-2 border-2">
+                                        <h4>{`${i+1}번 `}<span className={`${resultColor}`}>{result}</span></h4>
+                                        <h5>Q.{question[i]}</h5>
+                                        <p>A.{correct_answer}</p>
+                                    </div>
+                                )
+                            })
+                        }
                     </div>
                 </div>
                 :
