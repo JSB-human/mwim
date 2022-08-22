@@ -237,7 +237,7 @@ const TestGame = () => {
                                 }
 
                                 return(
-                                    <div className="mt-4 rounded-lg bg-[#C8EE9D] p-2 border-2">
+                                    <div className="mt-4 rounded-lg bg-[#C8EE9D] p-2 border-2" key={i}>
                                         <h4>{`${i+1}번 `}<span className={`${resultColor}`}>{result}</span></h4>
                                         <h5>Q.{question[i]}</h5>
                                         <p>A.{correct_answer}</p>
