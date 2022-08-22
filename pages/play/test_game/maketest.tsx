@@ -132,7 +132,7 @@ const MakeTest = () => {
             a9 : JSON.stringify(answer[8]),
             q10 : question[9],
             a10 : JSON.stringify(answer[9]),
-            imgs : '',
+            imgs : JSON.stringify(fileUrls),
             correct : JSON.stringify(correct),
             resultTxt : JSON.stringify(resultTxt)
         });
@@ -162,7 +162,7 @@ const MakeTest = () => {
             a9 : JSON.stringify(answer[8]),
             q10 : question[9],
             a10 : JSON.stringify(answer[9]),
-            imgs : '',
+            imgs : JSON.stringify(fileUrls),
             correct : JSON.stringify(correct),
             resultTxt : JSON.stringify(resultTxt)
         })

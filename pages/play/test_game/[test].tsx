@@ -1,8 +1,9 @@
 import axios from "axios";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
-import { Button } from "react-bootstrap";
+import { Button, Image } from "react-bootstrap";
 import { FaArrowRight } from "react-icons/fa";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 import Footer from "../../../component/footer";
 import NavBar from "../../../component/navBar";
 import ShareBtns from "../../../component/shareBtns";
@@ -106,10 +107,9 @@ const TestGame = () => {
     
                     setResultTxts(JSON.parse(res.data.resultTxt));
                     setCorrect(JSON.parse(res.data.correct));
-                    
                     setImgs(JSON.parse(res.data.imgs));
                 } catch (error) {
-                    setImgs([]);
+                    setImgs(['','','','','','','','','','']);
                 }
                 
             })
@@ -239,6 +239,17 @@ const TestGame = () => {
                                 return(
                                     <div className="mt-4 rounded-lg bg-[#C8EE9D] p-2 border-2" key={i}>
                                         <h4>{`${i+1}번 `}<span className={`${resultColor}`}>{result}</span></h4>
+                                        {
+                                            imgs[i] !== ''?
+                                            <LazyLoadImage src={imgs[i]} 
+                                                        className="scale-90"
+                                                        alt = "이미지"
+                                                        effect="black-and-white"
+                                                        
+                                            />
+                                            :
+                                            <></>
+                                        }
                                         <h5>Q.{question[i]}</h5>
                                         <p>A.{correct_answer}</p>
                                     </div>
@@ -251,6 +262,16 @@ const TestGame = () => {
                 <div>
                     <div className="bg-white p-5 border-4 border-lime-500 rounded-3xl">
                         <h2>{no}번째 문제</h2>
+                        {
+                            imgs[no-1] !== ''?
+                            <LazyLoadImage src={imgs[no-1]} 
+                                        className="scale-90"
+                                        alt = "이미지"
+                                        effect="black-and-white"
+                            />
+                            :
+                            <div></div>
+                        }
                         <p className="text-xl">{question[no-1]}</p>
                     </div>
                     <div className="mt-4 flex flex-col space-y-5">
