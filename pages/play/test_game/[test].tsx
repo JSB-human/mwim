@@ -162,7 +162,7 @@ const TestGame = () => {
                     )
                 }else{
                     return  (
-                        <button className="border-4 border-black rounded-2xl p-2 bg-[#43B047] hover:bg-[#f25350] w-full" key={i}
+                        <button className="border-4 border-black rounded-2xl p-2 bg-[#009688] hover:bg-[#f25350] w-full" key={i}
                             onClick={() => setPick(i)}
                         >
                             <span className="text-white">
@@ -277,7 +277,7 @@ const TestGame = () => {
                     <div className="mt-4 flex flex-col space-y-5">
                         {RenderAnsers()}
                     </div>
-                    <div className="mt-10">
+                    <div className="mt-10 pb-5">
                         <button className="w-full border-4 border-black bg-white text-4xl p-2 rounded-full"
                             onClick={NextBtn}
                         >

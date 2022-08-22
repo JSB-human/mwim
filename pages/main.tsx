@@ -373,6 +373,52 @@ const Main = () => {
                             </Card.Body>
                         </Card>
                     </div>
+                    {/* <div >
+                        <Card>
+                            <div className="p-2 flex items-center justify-center ">
+                                <Card.Img variant="top" src="/imgs/front-of-bus.png" className="h-20 w-auto"/>
+                            </div>
+                            <Card.Body>
+                                <Card.Title>대중교통 정보</Card.Title>
+                                <Card.Text>
+                                    버스, 지하철 길 찾기
+                                </Card.Text>
+                                <Link href="#">
+                                    <a> 
+                                        <Button style={{backgroundColor : "#049CD8"}} variant="outline-light">
+                                            <span className="flex">
+                                                <BsFillPlayFill size={22}/>
+                                                플레이
+                                            </span>
+                                        </Button>
+                                    </a>
+                                </Link>
+                            </Card.Body>
+                        </Card>
+                    </div> */}
+                    {/* <div>
+                        <Card>
+                            <div className="p-2 flex items-center justify-center ">
+                                <Card.Img variant="top" src="/imgs/vacations.png" className="h-20 w-auto"/>
+                            </div>
+                            <Card.Body>
+                                <Card.Title>여행지 찾기</Card.Title>
+                                <Card.Text>
+                                    여행을 떠나볼까요?
+                                </Card.Text>
+                                <Link href="#">
+                                    <a> 
+                                        <Button style={{backgroundColor : "#049CD8"}} variant="outline-light">
+                                            <span className="flex">
+                                                <BsFillPlayFill size={22}/>
+                                                플레이
+                                            </span>
+                                        </Button>
+                                    </a>
+                                </Link>
+                            </Card.Body>
+                        </Card>
+                    </div> */}
                     <div>
                         <Card>
                             <div className="p-2 flex items-center justify-center ">
