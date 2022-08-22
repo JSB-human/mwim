@@ -71,7 +71,7 @@ const TestGame = () => {
                     
                     setImgs(JSON.parse(res.data.imgs));
                 } catch (error) {
-                    setImgs([]);
+                    setImgs(['','','','','','','','','','']);
                 }
             })
         }else{
@@ -127,7 +127,7 @@ const TestGame = () => {
             }
             setRightCnt(cnt);
         }
-    }, [no])
+    }, [no, answer, correct])
 
     const NextBtn = () => {
         if(pick === -1){

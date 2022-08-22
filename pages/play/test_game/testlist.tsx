@@ -42,7 +42,7 @@ const TestList = () => {
                                 {
                                     testArr.map((val, i) => {
                                         return (
-                                            <Link href={`/play/test_game/${val.test_no}`} key={i}>
+                                            <Link href={`/play/test_game/${val.test_no}`} key={i} passHref>
                                                 <tr key={i} className="hover:cursor-pointer">
                                                     <td>
                                                         <a className="text-black decoration-white">
