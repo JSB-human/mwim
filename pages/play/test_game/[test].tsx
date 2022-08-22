@@ -249,7 +249,7 @@ const TestGame = () => {
                 </div>
                 :
                 <div>
-                    <div className="bg-white p-5 border-4 border-[#FBD000] rounded-3xl">
+                    <div className="bg-white p-5 border-4 border-lime-500 rounded-3xl">
                         <h2>{no}번째 문제</h2>
                         <p className="text-xl">{question[no-1]}</p>
                     </div>
