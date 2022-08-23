@@ -201,7 +201,20 @@ const TestGame = () => {
                             <span className="text-white">맞은 개수 </span>
                             <span className="text-black">{`${rightCnt}/10`}</span>
                         </h1>
-                        <h2>{resultTxts[0]}</h2>
+                        <h2>
+                            {   
+                                rightCnt === 0 ?
+                                resultTxts[0]
+                                :
+                                rightCnt < 6 ?
+                                resultTxts[1]
+                                :
+                                rightCnt < 10 ?
+                                resultTxts[2]
+                                :
+                                resultTxts[3]
+                            }
+                        </h2>
                         <ShareBtns
                             btnTitle=""
                             newgame={false}
