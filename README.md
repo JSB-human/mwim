@@ -12,7 +12,7 @@
 </div>
 
 ## 사이트 주소
-주소 : https://mwim.vercel.app/  
+주소 : https://mwim.vercel.app  
 [방문하기](https://mwim.vercel.app/)
 
 ## 백엔드 서버
