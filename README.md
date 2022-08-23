@@ -26,7 +26,8 @@
 ### 비밀번호 찾기
 회원가입한 이메일로 인증코드를 받아 비밀번호 변경
 
-### 플레이 가능한 컨텐츠 (10가지)
+### 플레이 가능한 컨텐츠 (11가지)
+[테스트게임](https://mwim.vercel.app/play/test_game/0)
 [밸런스게임](https://mwim.vercel.app/play/balance/0)  
 [투표](https://mwim.vercel.app/play/vote/0)  
 [고급 유머](https://mwim.vercel.app/play/joke/0)  
