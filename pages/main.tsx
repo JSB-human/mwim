@@ -20,178 +20,7 @@ const Main = () => {
             <NavBar/>
             <div className="text-center min-h-screen h-full w-full pt-2 pb-2 font-nexon">
                 <div className="container mx-auto px-4 grid grid-cols-1 lg:grid-cols-2 gap-2">
-                <div>
-                        <Card>
-                            <div className="p-2 flex items-center justify-center ">
-                                <Card.Img variant="top" src="/imgs/test.png" className="h-20 w-auto"/>
-                            </div>
-                            <Card.Body>
-                                <Card.Title>테스트</Card.Title>
-                                <Card.Text>
-                                    테스트를 즐겨보세요.
-                                </Card.Text>
-                                <Link href="/play/test_game/0">
-                                    <a> 
-                                        <Button style={{backgroundColor : "#049CD8"}} variant="outline-light">
-                                            <span className="flex">
-                                                <BsFillPlayFill size={22}/>
-                                                무작위
-                                            </span>
-                                        </Button>
-                                    </a>
-                                </Link>
-                                <Link href="/play/test_game/maketest">
-                                    <a>
-                                        <Button style={{backgroundColor : "#E52521"}} variant="outline-light">
-                                            <span className="flex">
-                                                <IoMdCreate size={20}/>
-                                                만들기
-                                            </span>
-                                        </Button>
-                                    </a>
-                                </Link>
-                                <Link href="/play/test_game/testlist">
-                                    <a>
-                                        <Button style={{backgroundColor : "#43B047"}} variant="outline-light">
-                                            <span className="flex">
-                                                <AiOutlineUnorderedList size={20}/>
-                                                목록
-                                            </span>
-                                        </Button>
-                                    </a>
-                                </Link>
-                            </Card.Body>
-                        </Card>
-                    </div>
-                    <div>
-                        <Card>
-                            <div className="p-2 flex items-center justify-center ">
-                                <Card.Img variant="top" src="/imgs/vs.png" className="h-20 w-auto"/>
-                            </div>
-                            <Card.Body>
-                                <Card.Title>밸런스 게임</Card.Title>
-                                <Card.Text>
-                                    밸런스게임을 해보세요.
-                                </Card.Text>
-                                <Link href="/play/balance/0">
-                                    <a> 
-                                        <Button style={{backgroundColor : "#049CD8"}} variant="outline-light">
-                                            <span className="flex">
-                                                <BsFillPlayFill size={22}/>
-                                                무작위
-                                            </span>
-                                        </Button>
-                                    </a>
-                                </Link>
-                                <Link href="/play/balance/makebalance">
-                                    <a>
-                                        <Button style={{backgroundColor : "#E52521"}} variant="outline-light">
-                                            <span className="flex">
-                                                <IoMdCreate size={20}/>
-                                                만들기
-                                            </span>
-                                        </Button>
-                                    </a>
-                                </Link>
-                                {/* <Link href="/play/balance/list/balance_list">
-                                    <a>
-                                        <Button variant="danger">
-                                            <span className="flex">
-                                                <AiOutlineUnorderedList size={20}/>
-                                                목록
-                                            </span>
-                                        </Button>
-                                    </a>
-                                </Link> */}
-                            </Card.Body>
-                        </Card>
-                    </div>
-                    <div >
-                        <Card>
-                            <div className="p-2 flex items-center justify-center ">
-                                <Card.Img variant="top" src="/imgs/archive.png" className="h-20 w-auto"/>
-                            </div>
-                            <Card.Body>
-                                <Card.Title>투표</Card.Title>
-                                <Card.Text>
-                                    투표를 해보세요.
-                                </Card.Text>
-                                <Link href="/play/vote/0">
-                                    <a> 
-                                        <Button style={{backgroundColor : "#049CD8"}} variant="outline-light">
-                                            <span className="flex">
-                                                <BsFillPlayFill size={22}/>
-                                                무작위
-                                            </span>
-                                        </Button>
-                                    </a>
-                                </Link>
-                                <Link href="/play/vote/makevote">
-                                <a>
-                                    <Button style={{backgroundColor : "#E52521"}} variant="outline-light">
-                                            <span className="flex">
-                                                <IoMdCreate size={20}/>
-                                                만들기
-                                            </span>
-                                        </Button>
-                                    </a>
-                                </Link>
-                                {/* <Link href="/play/balance/list/balance_list">
-                                    <a>
-                                        <Button variant="danger">
-                                            <span className="flex">
-                                                <AiOutlineUnorderedList size={20}/>
-                                                목록
-                                            </span>
-                                        </Button>
-                                    </a>
-                                </Link> */}
-                            </Card.Body>
-                        </Card>
-                    </div>
-                    <div >
-                        <Card>
-                            <div className="p-2 flex items-center justify-center ">
-                                <Card.Img variant="top" src="/imgs/laugh.png" className="h-20 w-auto"/>
-                            </div>
-                            <Card.Body>
-                                <Card.Title>고급 유머</Card.Title>
-                                <Card.Text>
-                                    재밌는 유머를 공유하세요.
-                                </Card.Text>
-                                <Link href="/play/joke/0">
-                                    <a> 
-                                        <Button style={{backgroundColor : "#049CD8"}} variant="outline-light">
-                                            <span className="flex">
-                                                <BsFillPlayFill size={22}/>
-                                                무작위
-                                            </span>
-                                        </Button>
-                                    </a>
-                                </Link>
-                                <Link href="/play/joke/makejoke">
-                                    <a>
-                                        <Button style={{backgroundColor : "#E52521"}} variant="outline-light">
-                                            <span className="flex">
-                                                <IoMdCreate size={20}/>
-                                                만들기
-                                            </span>
-                                        </Button>
-                                    </a>
-                                </Link>
-                                {/* <Link href="/play/joke/list/joke_list">
-                                    <a>
-                                        <Button variant="danger">
-                                            <span className="flex">
-                                                <AiOutlineUnorderedList size={20}/>
-                                                목록
-                                            </span>
-                                        </Button>
-                                    </a>
-                                </Link> */}
-                            </Card.Body>
-                        </Card>
-                    </div>
+                    
                     <div >
                         <Card>
                             <div className="p-2 flex items-center justify-center ">
@@ -215,49 +44,7 @@ const Main = () => {
                             </Card.Body>
                         </Card>
                     </div>
-                    <div >
-                        <Card>
-                            <div className="p-2 flex items-center justify-center ">
-                                <Card.Img variant="top" src="/imgs/discussion.png" className="h-20 w-auto"/>
-                            </div>
-                            <Card.Body>
-                                <Card.Title>토론</Card.Title>
-                                <Card.Text>
-                                    토론을 해보세요.
-                                </Card.Text>
-                                <Link href="/play/debate/0">
-                                    <a> 
-                                        <Button style={{backgroundColor : "#049CD8"}} variant="outline-light">
-                                            <span className="flex">
-                                                <BsFillPlayFill size={22}/>
-                                                무작위
-                                            </span>
-                                        </Button>
-                                    </a>
-                                </Link>
-                                <Link href="/play/debate/makedebate">
-                                    <a>
-                                        <Button style={{backgroundColor : "#E52521"}} variant="outline-light">
-                                            <span className="flex">
-                                                <IoMdCreate size={20}/>
-                                                만들기
-                                            </span>
-                                        </Button>
-                                    </a>
-                                </Link>
-                                <Link href="/play/debate/list/1">
-                                    <a>
-                                        <Button style={{backgroundColor : "#43B047"}} variant="outline-light">
-                                            <span className="flex">
-                                                <AiOutlineUnorderedList size={20}/>
-                                                목록
-                                            </span>
-                                        </Button>
-                                    </a>
-                                </Link>
-                            </Card.Body>
-                        </Card>
-                    </div>
+                    
                     <div >
                         <Card>
                             <div className="p-2 flex items-center justify-center ">
@@ -370,6 +157,224 @@ const Main = () => {
                                         </Button>
                                     </a>
                                 </Link>
+                            </Card.Body>
+                        </Card>
+                    </div>
+                    <div className="col-span-2">
+                        <p>백엔드 프리티어 만료로 서버 종료</p>
+                    </div>
+                    <div>
+                        <Card>
+                            <div className="p-2 flex items-center justify-center ">
+                                <Card.Img variant="top" src="/imgs/test.png" className="h-20 w-auto"/>
+                            </div>
+                            <Card.Body>
+                                <Card.Title className="line-through">테스트</Card.Title>
+                                <Card.Text>
+                                    테스트를 즐겨보세요.
+                                </Card.Text>
+                                {/* <Link href="/play/test_game/0">
+                                    <a>  */}
+                                        <Button style={{backgroundColor : "#049CD8"}} variant="outline-light" disabled>
+                                            <span className="flex">
+                                                <BsFillPlayFill size={22}/>
+                                                무작위
+                                            </span>
+                                        </Button>
+                                    {/* </a>
+                                </Link> */}
+                                {/* <Link href="/play/test_game/maketest">
+                                    <a> */}
+                                        <Button style={{backgroundColor : "#E52521"}} variant="outline-light" disabled>
+                                            <span className="flex">
+                                                <IoMdCreate size={20}/>
+                                                만들기
+                                            </span>
+                                        </Button>
+                                    {/* </a>
+                                </Link> */}
+                                {/* <Link href="/play/test_game/testlist">
+                                    <a> */}
+                                        <Button style={{backgroundColor : "#43B047"}} variant="outline-light" disabled>
+                                            <span className="flex">
+                                                <AiOutlineUnorderedList size={20}/>
+                                                목록
+                                            </span>
+                                        </Button>
+                                    {/* </a>
+                                </Link> */}
+                            </Card.Body>
+                        </Card>
+                    </div>
+                    <div>
+                        <Card>
+                            <div className="p-2 flex items-center justify-center ">
+                                <Card.Img variant="top" src="/imgs/vs.png" className="h-20 w-auto"/>
+                            </div>
+                            <Card.Body>
+                                <Card.Title className="line-through">밸런스 게임</Card.Title>
+                                <Card.Text>
+                                    밸런스게임을 해보세요.
+                                </Card.Text>
+                                {/* <Link href="/play/balance/0">
+                                    <a>  */}
+                                        <Button style={{backgroundColor : "#049CD8"}} variant="outline-light" disabled>
+                                            <span className="flex">
+                                                <BsFillPlayFill size={22}/>
+                                                무작위
+                                            </span>
+                                        </Button>
+                                    {/* </a>
+                                </Link> */}
+                                {/* <Link href="/play/balance/makebalance">
+                                    <a> */}
+                                        <Button style={{backgroundColor : "#E52521"}} variant="outline-light" disabled>
+                                            <span className="flex">
+                                                <IoMdCreate size={20}/>
+                                                만들기
+                                            </span>
+                                        </Button>
+                                    {/* </a>
+                                </Link> */}
+                                {/* <Link href="/play/balance/list/balance_list">
+                                    <a>
+                                        <Button variant="danger">
+                                            <span className="flex">
+                                                <AiOutlineUnorderedList size={20}/>
+                                                목록
+                                            </span>
+                                        </Button>
+                                    </a>
+                                </Link> */}
+                            </Card.Body>
+                        </Card>
+                    </div>
+                    <div >
+                        <Card>
+                            <div className="p-2 flex items-center justify-center ">
+                                <Card.Img variant="top" src="/imgs/archive.png" className="h-20 w-auto"/>
+                            </div>
+                            <Card.Body>
+                                <Card.Title className="line-through">투표</Card.Title>
+                                <Card.Text>
+                                    투표를 해보세요.
+                                </Card.Text>
+                                {/* <Link href="/play/vote/0">
+                                    <a>  */}
+                                        <Button style={{backgroundColor : "#049CD8"}} variant="outline-light" disabled>
+                                            <span className="flex">
+                                                <BsFillPlayFill size={22}/>
+                                                무작위
+                                            </span>
+                                        </Button>
+                                    {/* </a>
+                                </Link> */}
+                                {/* <Link href="/play/vote/makevote">
+                                <a> */}
+                                    <Button style={{backgroundColor : "#E52521"}} variant="outline-light" disabled>
+                                            <span className="flex">
+                                                <IoMdCreate size={20}/>
+                                                만들기
+                                            </span>
+                                        </Button>
+                                    {/* </a>
+                                </Link> */}
+                                {/* <Link href="/play/balance/list/balance_list">
+                                    <a>
+                                        <Button variant="danger">
+                                            <span className="flex">
+                                                <AiOutlineUnorderedList size={20}/>
+                                                목록
+                                            </span>
+                                        </Button>
+                                    </a>
+                                </Link> */}
+                            </Card.Body>
+                        </Card>
+                    </div>
+                    <div >
+                        <Card>
+                            <div className="p-2 flex items-center justify-center ">
+                                <Card.Img variant="top" src="/imgs/laugh.png" className="h-20 w-auto"/>
+                            </div>
+                            <Card.Body>
+                                <Card.Title className="line-through">고급 유머</Card.Title>
+                                <Card.Text>
+                                    재밌는 유머를 공유하세요.
+                                </Card.Text>
+                                {/* <Link href="/play/joke/0">
+                                    <a>  */}
+                                        <Button style={{backgroundColor : "#049CD8"}} variant="outline-light" disabled>
+                                            <span className="flex">
+                                                <BsFillPlayFill size={22}/>
+                                                무작위
+                                            </span>
+                                        </Button>
+                                    {/* </a>
+                                </Link> */}
+                                {/* <Link href="/play/joke/makejoke">
+                                    <a> */}
+                                        <Button style={{backgroundColor : "#E52521"}} variant="outline-light" disabled>
+                                            <span className="flex">
+                                                <IoMdCreate size={20}/>
+                                                만들기
+                                            </span>
+                                        </Button>
+                                    {/* </a>
+                                </Link> */}
+                                {/* <Link href="/play/joke/list/joke_list">
+                                    <a>
+                                        <Button variant="danger">
+                                            <span className="flex">
+                                                <AiOutlineUnorderedList size={20}/>
+                                                목록
+                                            </span>
+                                        </Button>
+                                    </a>
+                                </Link> */}
+                            </Card.Body>
+                        </Card>
+                    </div>
+                    <div >
+                        <Card>
+                            <div className="p-2 flex items-center justify-center ">
+                                <Card.Img variant="top" src="/imgs/discussion.png" className="h-20 w-auto"/>
+                            </div>
+                            <Card.Body>
+                                <Card.Title className="line-through">토론</Card.Title>
+                                <Card.Text>
+                                    토론을 해보세요.
+                                </Card.Text>
+                                {/* <Link href="/play/debate/0">
+                                    <a>  */}
+                                        <Button style={{backgroundColor : "#049CD8"}} variant="outline-light" disabled>
+                                            <span className="flex">
+                                                <BsFillPlayFill size={22}/>
+                                                무작위
+                                            </span>
+                                        </Button>
+                                    {/* </a>
+                                </Link> */}
+                                {/* <Link href="/play/debate/makedebate">
+                                    <a> */}
+                                        <Button style={{backgroundColor : "#E52521"}} variant="outline-light" disabled>
+                                            <span className="flex">
+                                                <IoMdCreate size={20}/>
+                                                만들기
+                                            </span>
+                                        </Button>
+                                    {/* </a>
+                                </Link> */}
+                                {/* <Link href="/play/debate/list/1">
+                                    <a> */}
+                                        <Button style={{backgroundColor : "#43B047"}} variant="outline-light" disabled>
+                                            <span className="flex">
+                                                <AiOutlineUnorderedList size={20}/>
+                                                목록
+                                            </span>
+                                        </Button>
+                                    {/* </a>
+                                </Link> */}
                             </Card.Body>
                         </Card>
                     </div>
