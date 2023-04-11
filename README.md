@@ -27,12 +27,13 @@
 회원가입한 이메일로 인증코드를 받아 비밀번호 변경
 
 ### 플레이 가능한 컨텐츠 (11가지)  
-[테스트게임](https://mwim.vercel.app/play/test_game/0) - <a href="#테스트게임">스크린샷</a>  
-[밸런스게임](https://mwim.vercel.app/play/balance/0) - <a href="#밸런스게임">스크린샷</a>  
-[투표](https://mwim.vercel.app/play/vote/0) - <a href="#투표">스크린샷</a>  
-[고급 유머](https://mwim.vercel.app/play/joke/0) - <a href="#고급-유머">스크린샷</a>  
+#### 백엔드 서버 프리티어 만료로 일부 컨텐츠 실행불가
+~~[테스트게임](https://mwim.vercel.app/play/test_game/0)~~ - <a href="#테스트게임">스크린샷</a>  
+~~[밸런스게임](https://mwim.vercel.app/play/balance/0)~~ - <a href="#밸런스게임">스크린샷</a>  
+~~[투표](https://mwim.vercel.app/play/vote/0)~~ - <a href="#투표">스크린샷</a>  
+~~[고급 유머](https://mwim.vercel.app/play/joke/0)~~ - <a href="#고급-유머">스크린샷</a>  
+~~[토론](https://mwim.vercel.app/play/debate/0)~~ - <a href="#토론">스크린샷</a>  
 [행맨](https://mwim.vercel.app/play/hangman/hangman) - <a href="#행맨">스크린샷</a>  
-[토론](https://mwim.vercel.app/play/debate/0) - <a href="#토론">스크린샷</a>  
 [코인가격예측](https://mwim.vercel.app/play/coin/guessCoin) - <a href="#코인가격예측">스크린샷</a>  
 [영화 맞추기](https://mwim.vercel.app/play/guess_movie/movie) - <a href="#영화-맞추기">스크린샷</a>  
 [상품 최저가 맞추기](https://mwim.vercel.app/play/guess_price/price) - <a href="#상품-최저가-맞추기">스크린샷</a>  
