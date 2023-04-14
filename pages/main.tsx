@@ -160,7 +160,7 @@ const Main = () => {
                             </Card.Body>
                         </Card>
                     </div>
-                    <div className="col-span-2">
+                    <div className="col-span-1  lg:col-span-2">
                         <p>백엔드 프리티어 만료로 서버 종료</p>
                     </div>
                     <div>
